@@ -32,7 +32,7 @@ catalogue = ["Harry Potter e il calice di fuoco", "Il rosso e il nero", "Il picc
 Più essenziale di così, si muore... eppure è un codice valido e funzionante.
 
 ### Web server
-Per poterlo far comunicare con la pagina HTML però, mi serve qualcuno che faccia da intermediario. Non posso infatti chiamare del codice Python direttamente dalla pagina web! Le pagine web possono infatti interagire unicamente tramite dei link, o più precisamente degli URL, e noi ancora non abbiamo nulla del genere.
+Per poter far comunicare Python con la pagina HTML però, serve qualcuno che faccia da intermediario. Non posso infatti chiamare del codice Python direttamente dalla pagina web! Le pagine web possono infatti interagire unicamente tramite dei link, o più precisamente degli URL, e noi ancora non abbiamo nulla del genere.
 
 L'intermediario che mette in comunicazione pagina web e codice sul server si chiama, in modo non troppo sorprendente, **web server**. Vediamo come si fa su Python.
 
@@ -61,9 +61,9 @@ def data_book():
         )
 ```
 
-Vediamo cosa abbiamo fatto. Abbiamo importato `Flask` e il nostro catalogo dal file che abbiamo creato precedentemente. Importiamo anche la libreria di sistema `json`, che è utile per convertire le variabili Python nel formato stringa JSON (vedi dopo. 
+Vediamo cosa abbiamo fatto. Abbiamo importato `Flask` dalla libreria `flask` e il nostro catalogo dal file `library` che abbiamo creato precedentemente. Importiamo anche la libreria di sistema `json`, che è utile per convertire le variabili Python nel formato stringa JSON (vedi dopo. 
 
-La riga `app = Flask("marconi")` crea un web server e gli da il nome di "marconi" (potevamo mettere quello che preferivamo).
+La riga `app = Flask("marconi")` crea un web server e gli da il nome di "marconi" (possiamo mettere quello che preferiamo).
 
 La riga `@app.route("/")` è un'annotazione: sta ad indicare che la funzione successiva deve essere chiamata quando qualcuno prova ad accedere alla pagina web.
 
@@ -103,6 +103,117 @@ Per lanciare il web server, aprite un terminale nella cartella del vostro proget
 ```
 python3 -m flask run
 ```
-Se tutto va bene, vi dovrebbe comparire la scritta "Running on http://127.0.0.1:5000/". Ecco quindi il link che ci serviva per far comunicare la pagina web con la nostra applicazione!
+Se tutto va bene, vi dovrebbe comparire la scritta `Running on http://127.0.0.1:5000/`. Ecco quindi il link che ci serviva per far comunicare la pagina web con la nostra applicazione!
 
 ## HTML
+Ora creiamo un nuovo file, sempre nel nostro progetto, che chiamiamo `index.html`.
+
+```hmtl
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biblioteca scolastica</title>
+</head>
+<body>
+    <ul>
+    </ul>    
+</body>
+</html>
+```
+
+È una semplice pagina che visualizza una lista, in questo momento vuota.
+
+Come facciamo a riempire la lista con i dati presi dal web server? Ci serve un po' di JavaScript.
+
+
+### JavaScript
+Subito dopo il tag `</body>` e subito prima del tag `</html>`, nella penultima riga insomma, aggiungiamo il codice che ci serve. 
+
+Prima di tutto scarichiamo ed importiamo una libreria JavaScript che ci semplificherà molto la vita e chi si chiama [JQuery](https://jquery.com). Potete scaricare il file direttamente cliccando con il tasto destro [qui](https://code.jquery.com/jquery-3.4.1.min.js) e scegliendo "Salva link come" o qualcosa di simile. Salvate il file sempre nella cartella di progetto.
+
+Quindi aggiungiamo la seguente riga:
+```html
+<script src="jquery-3.4.1.min.js"></script>
+```
+
+OK, abbiamo importato la libreria. Ora dobbiamo prendere i dati dal web server. Lo facciamo scrivendo subito dopo un nostro pezzo di codice all'interno del tag `<script>`.
+
+```html
+<script>
+    // Prende i dati come JSON dall'URL
+    // quando ha finito di prendere i dati, chiama la funzione "makeList"
+    $.getJSON("http://127.0.0.1:5000/").done(makeList);
+</script>
+```
+
+Attenzione a quello che succede. Il codice dentro il tag script è JavaScript. Il simbolo del dollaro (`$`) indica che stiamo usando la libreria JQuery che abbiamo importato subito prima. Quando i dati sono stati completamente ricevuti (ci potrebbe volere del tempo, se i libri fossero molti), viene chiamata la funzione `makeList`, che dobbiamo ancora definire.
+
+Subito dopo la riga precedente, creiamo ora la funzione `makeList`:
+```js
+function makeList(jsonBooks) {
+    for (book of jsonBooks) {
+        let newItem = `<li>${book}</li>`;
+        $("ul").append(newItem);
+    }
+}
+```
+
+Vediamo cosa abbiamo fatto. Nella prima riga abbiamo creato una funzione con la keyword `function`; la funzione prende in input un parametro che gli viene passato da JQuery quando i dati sono stati ricevuti.
+
+Subito dopo c'è un ciclo `for`, molto simile a quello del Python, con qualche differenza:
+- JavaScript usa le parentesi dopo la keyword `for`
+- JavaScript usa la keyword `of` invece che `in` per iterare all'interno di una lista
+- JavaScript usa le parentesi graffe per contenere il corpo del `for`
+
+
+All'interno del `for`, nella prima riga creiamo il nuovo item che vogliamo andare ad aggiungere alla lista.
+
+Nella riga successiva, c'è un istruzione che dice:
+- usando JQuery (`$`), seleziona la lista non ordinata (`ul`)
+- all'interno della lista, aggiungi alla fine (`append`) il nuovo elemento appena creato
+
+Il codice finale di tutta la pagina verrà come segue:
+```hmtl
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biblioteca scolastica</title>
+</head>
+<body>
+    <ul>
+    </ul>    
+</body>
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+    // Prende i dati come JSON dall'URL
+    // quando ha finito di prendere i dati, chiama la funzione "makeList"
+    $.getJSON("http://127.0.0.1:5000/").done(makeList);
+    function makeList(jsonBooks) {
+    for (book of jsonBooks) {
+        let newItem = `<li>${book}</li>`;
+        $("ul").append(newItem);
+    }
+}
+</script>
+</html>
+```
+
+### Go Live
+Su Visual Studio Code (detto anche VSCode per brevità), potete lanciare questa pagina con "Go Live" nella barra in basso, lo trovate sulla destra. Se non lo vedete, assicuratevi di aver installato l'estensione "Live Server" su VSCode.
+
+Al primo lancio vedrete che non succede niente. Per controllare cosa è successo, aprite la console di debug premendo con il tasto destro in qualsiasi punto della pagina web nel browser e cliccando su "Analizza elemento" o "Ispeziona elemento", quindi nel pannello che si apre, selezionate la tab console.
+
+Se avete fatto tutto correttamente, dovrebbe comparirvi un messaggio di errore del tipo:
+```
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://127.0.0.1:5000/. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
+```
+
+È normale, perché state usando due web-server diversi per la stessa pagina, questa è una cosa potenzialmente pericolosa ed il browser vi impedisce di farlo. Per aggirare la limitazione, il modo più semplice è installare queste estensioni per [Firefox](https://addons.mozilla.org/it/firefox/addon/cors-everywhere/) o per [Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf). In questo modo vi caricherà la pagina correttamente anche in questo caso.
+
+> Ovviamente non è questo il modo più corretto di procedere. Per fare le cose per bene, bisogna spostare tutto su Flask, anche le pagine HTML. È un'operazione abbastanza semplice ma la vedremo dopo che vi sarete impratichiti con questa parte.

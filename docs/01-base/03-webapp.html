@@ -176,7 +176,7 @@ catalogue = [&quot;Harry Potter e il calice di fuoco&quot;, &quot;Il rosso e il 
 </code></pre>
 <p>Più essenziale di così, si muore... eppure è un codice valido e funzionante.</p>
 <h3><a class="header" href="#web-server" id="web-server">Web server</a></h3>
-<p>Per poterlo far comunicare con la pagina HTML però, mi serve qualcuno che faccia da intermediario. Non posso infatti chiamare del codice Python direttamente dalla pagina web! Le pagine web possono infatti interagire unicamente tramite dei link, o più precisamente degli URL, e noi ancora non abbiamo nulla del genere.</p>
+<p>Per poter far comunicare Python con la pagina HTML però, serve qualcuno che faccia da intermediario. Non posso infatti chiamare del codice Python direttamente dalla pagina web! Le pagine web possono infatti interagire unicamente tramite dei link, o più precisamente degli URL, e noi ancora non abbiamo nulla del genere.</p>
 <p>L'intermediario che mette in comunicazione pagina web e codice sul server si chiama, in modo non troppo sorprendente, <strong>web server</strong>. Vediamo come si fa su Python.</p>
 <p>Esistono diverse librerie che forniscono un web server, noi in questo tutorial useremo <a href="https://www.palletsprojects.com/p/flask/">Flask</a>, che è estremamente leggero e semplice da usare, anche se magari non ha tutte le funzionalità che offrono altre librerie.</p>
 <p>Essendo una libreria esterna non di sistema, bisogna prima di tutto installarla. Come abbiamo visto, apriamo un terminale e scriviamo:</p>
@@ -196,8 +196,8 @@ def data_book():
         [book for book in full_catalogue]
         )
 </code></pre>
-<p>Vediamo cosa abbiamo fatto. Abbiamo importato <code>Flask</code> e il nostro catalogo dal file che abbiamo creato precedentemente. Importiamo anche la libreria di sistema <code>json</code>, che è utile per convertire le variabili Python nel formato stringa JSON (vedi dopo. </p>
-<p>La riga <code>app = Flask(&quot;marconi&quot;)</code> crea un web server e gli da il nome di &quot;marconi&quot; (potevamo mettere quello che preferivamo).</p>
+<p>Vediamo cosa abbiamo fatto. Abbiamo importato <code>Flask</code> dalla libreria <code>flask</code> e il nostro catalogo dal file <code>library</code> che abbiamo creato precedentemente. Importiamo anche la libreria di sistema <code>json</code>, che è utile per convertire le variabili Python nel formato stringa JSON (vedi dopo. </p>
+<p>La riga <code>app = Flask(&quot;marconi&quot;)</code> crea un web server e gli da il nome di &quot;marconi&quot; (possiamo mettere quello che preferiamo).</p>
 <p>La riga <code>@app.route(&quot;/&quot;)</code> è un'annotazione: sta ad indicare che la funzione successiva deve essere chiamata quando qualcuno prova ad accedere alla pagina web.</p>
 <p>La funzione <code>data_book()</code> viene quindi chiamata quando interroghiamo il web server. Questa funzione ritorna il nostro catalogo in formato JSON.</p>
 <h3><a class="header" href="#il-formato-json" id="il-formato-json">Il formato JSON</a></h3>
@@ -230,8 +230,97 @@ def data_book():
 <p>Per lanciare il web server, aprite un terminale nella cartella del vostro progetto e scrivete:</p>
 <pre><code>python3 -m flask run
 </code></pre>
-<p>Se tutto va bene, vi dovrebbe comparire la scritta &quot;Running on http://127.0.0.1:5000/&quot;. Ecco quindi il link che ci serviva per far comunicare la pagina web con la nostra applicazione!</p>
+<p>Se tutto va bene, vi dovrebbe comparire la scritta <code>Running on http://127.0.0.1:5000/</code>. Ecco quindi il link che ci serviva per far comunicare la pagina web con la nostra applicazione!</p>
 <h2><a class="header" href="#html" id="html">HTML</a></h2>
+<p>Ora creiamo un nuovo file, sempre nel nostro progetto, che chiamiamo <code>index.html</code>.</p>
+<pre><code class="language-hmtl">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;it&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Biblioteca scolastica&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+    &lt;/ul&gt;    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>È una semplice pagina che visualizza una lista, in questo momento vuota.</p>
+<p>Come facciamo a riempire la lista con i dati presi dal web server? Ci serve un po' di JavaScript.</p>
+<h3><a class="header" href="#javascript" id="javascript">JavaScript</a></h3>
+<p>Subito dopo il tag <code>&lt;/body&gt;</code> e subito prima del tag <code>&lt;/html&gt;</code>, nella penultima riga insomma, aggiungiamo il codice che ci serve. </p>
+<p>Prima di tutto scarichiamo ed importiamo una libreria JavaScript che ci semplificherà molto la vita e chi si chiama <a href="https://jquery.com">JQuery</a>. Potete scaricare il file direttamente cliccando con il tasto destro <a href="https://code.jquery.com/jquery-3.4.1.min.js">qui</a> e scegliendo &quot;Salva link come&quot; o qualcosa di simile. Salvate il file sempre nella cartella di progetto.</p>
+<p>Quindi aggiungiamo la seguente riga:</p>
+<pre><code class="language-html">&lt;script src=&quot;jquery-3.4.1.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>OK, abbiamo importato la libreria. Ora dobbiamo prendere i dati dal web server. Lo facciamo scrivendo subito dopo un nostro pezzo di codice all'interno del tag <code>&lt;script&gt;</code>.</p>
+<pre><code class="language-html">&lt;script&gt;
+    // Prende i dati come JSON dall'URL
+    // quando ha finito di prendere i dati, chiama la funzione &quot;makeList&quot;
+    $.getJSON(&quot;http://127.0.0.1:5000/&quot;).done(makeList);
+&lt;/script&gt;
+</code></pre>
+<p>Attenzione a quello che succede. Il codice dentro il tag script è JavaScript. Il simbolo del dollaro (<code>$</code>) indica che stiamo usando la libreria JQuery che abbiamo importato subito prima. Quando i dati sono stati completamente ricevuti (ci potrebbe volere del tempo, se i libri fossero molti), viene chiamata la funzione <code>makeList</code>, che dobbiamo ancora definire.</p>
+<p>Subito dopo la riga precedente, creiamo ora la funzione <code>makeList</code>:</p>
+<pre><code class="language-js">function makeList(jsonBooks) {
+    for (book of jsonBooks) {
+        let newItem = `&lt;li&gt;${book}&lt;/li&gt;`;
+        $(&quot;ul&quot;).append(newItem);
+    }
+}
+</code></pre>
+<p>Vediamo cosa abbiamo fatto. Nella prima riga abbiamo creato una funzione con la keyword <code>function</code>; la funzione prende in input un parametro che gli viene passato da JQuery quando i dati sono stati ricevuti.</p>
+<p>Subito dopo c'è un ciclo <code>for</code>, molto simile a quello del Python, con qualche differenza:</p>
+<ul>
+<li>JavaScript usa le parentesi dopo la keyword <code>for</code></li>
+<li>JavaScript usa la keyword <code>of</code> invece che <code>in</code> per iterare all'interno di una lista</li>
+<li>JavaScript usa le parentesi graffe per contenere il corpo del <code>for</code></li>
+</ul>
+<p>All'interno del <code>for</code>, nella prima riga creiamo il nuovo item che vogliamo andare ad aggiungere alla lista.</p>
+<p>Nella riga successiva, c'è un istruzione che dice:</p>
+<ul>
+<li>usando JQuery (<code>$</code>), seleziona la lista non ordinata (<code>ul</code>)</li>
+<li>all'interno della lista, aggiungi alla fine (<code>append</code>) il nuovo elemento appena creato</li>
+</ul>
+<p>Il codice finale di tutta la pagina verrà come segue:</p>
+<pre><code class="language-hmtl">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;it&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Biblioteca scolastica&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+    &lt;/ul&gt;    
+&lt;/body&gt;
+&lt;script src=&quot;jquery-3.4.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    // Prende i dati come JSON dall'URL
+    // quando ha finito di prendere i dati, chiama la funzione &quot;makeList&quot;
+    $.getJSON(&quot;http://127.0.0.1:5000/&quot;).done(makeList);
+    function makeList(jsonBooks) {
+    for (book of jsonBooks) {
+        let newItem = `&lt;li&gt;${book}&lt;/li&gt;`;
+        $(&quot;ul&quot;).append(newItem);
+    }
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3><a class="header" href="#go-live" id="go-live">Go Live</a></h3>
+<p>Su Visual Studio Code (detto anche VSCode per brevità), potete lanciare questa pagina con &quot;Go Live&quot; nella barra in basso, lo trovate sulla destra. Se non lo vedete, assicuratevi di aver installato l'estensione &quot;Live Server&quot; su VSCode.</p>
+<p>Al primo lancio vedrete che non succede niente. Per controllare cosa è successo, aprite la console di debug premendo con il tasto destro in qualsiasi punto della pagina web nel browser e cliccando su &quot;Analizza elemento&quot; o &quot;Ispeziona elemento&quot;, quindi nel pannello che si apre, selezionate la tab console.</p>
+<p>Se avete fatto tutto correttamente, dovrebbe comparirvi un messaggio di errore del tipo:</p>
+<pre><code>Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://127.0.0.1:5000/. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
+</code></pre>
+<p>È normale, perché state usando due web-server diversi per la stessa pagina, questa è una cosa potenzialmente pericolosa ed il browser vi impedisce di farlo. Per aggirare la limitazione, il modo più semplice è installare queste estensioni per <a href="https://addons.mozilla.org/it/firefox/addon/cors-everywhere/">Firefox</a> o per <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf">Chrome</a>. In questo modo vi caricherà la pagina correttamente anche in questo caso.</p>
+<blockquote>
+<p>Ovviamente non è questo il modo più corretto di procedere. Per fare le cose per bene, bisogna spostare tutto su Flask, anche le pagine HTML. È un'operazione abbastanza semplice ma la vedremo dopo che vi sarete impratichiti con questa parte.</p>
+</blockquote>
 
                     </main>
 
