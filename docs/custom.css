@@ -26,6 +26,10 @@ img.w35p {
   width: 35%;
 }
 
+img.w20p {
+  width: 20%;
+}
+
 p.clear {
   clear: both;
 }
