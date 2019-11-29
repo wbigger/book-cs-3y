@@ -8,6 +8,9 @@ Quello che stiamo per imparare in questo corso è qualcosa di fortemente creativ
 
 Scrivere codice è come scrivere un romanzo o dipingere su una tela. Le nostre penne e pennelli sono tastiera e mouse, e la tela è lo schermo. Ma quello che andremo a realizzare sarà qualcosa che non solo _rappresenta_ la realtà, ma andrà ad _interagire_ con essa, e in un medio periodo può anche modificarla ed esserne modificato. In altre parole il codice è una cosa viva, in continua _evoluzione_, la cui capacità di replicazione e mutazione (soprattutto per il codice open-source) lo rende molto vicino ad un essere vivente, con cui condivide molte caratteristiche.
 
+## Un programmatore è un bravo osservatore
+Un programmatore è un informatico, e come sappiamo dal primo anno, il compito principale di un informatico è... risolvere problemi. Per poter risolvere un problema, però, bisogna prima capire _qual'è_ il problema, _chi_ ha il problema e _perché_. Per poter fare questo, un programmatore deve essere un bravo osservatore della realtà. Più importante del QI o della genialità, è la capacità di saper osservare il mondo, ascoltare le persone, immedesimarsi negli altri e saper trasformare tutto questo in righe di codice che funzionino.
+
 ## Riferimenti culturali
 In questo manuale faccio riferimento ad alcuni autori non prettamente del mondo informatico ma che hanno guidato dal punto di vista concettuale questo corso.
 

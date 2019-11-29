@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Concetti base - Course Template</title>
+        <title>Tipi - Course Template</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html" class="active"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">3.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="../01-base/01-types.html" class="active"><strong aria-hidden="true">3.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,34 +154,66 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#concetti-base-di-programmazione" id="concetti-base-di-programmazione">Concetti base di programmazione</a></h1>
-<p>Quando vogliamo imparare a programmare, in qualsiasi linguaggio, ci troviamo di fronte ad una pagina vuota.</p>
-<p>Cosa dobbiamo fare? Cosa dobbiamo scrivere in questa pagina che ci si presenta davanti?</p>
-<p>Quello che stiamo per imparare in questo corso è qualcosa di fortemente creativo: non andremo solo a scrivere del codice che esegue istruzioni, ma andremo a creare un mondo nuovo, in cui ci potremo muovere ed agire con i concetti e le relazioni che avremo definito noi stessi.</p>
-<p>Scrivere codice è come scrivere un romanzo o dipingere su una tela. Le nostre penne e pennelli sono tastiera e mouse, e la tela è lo schermo. Ma quello che andremo a realizzare sarà qualcosa che non solo <em>rappresenta</em> la realtà, ma andrà ad <em>interagire</em> con essa, e in un medio periodo può anche modificarla ed esserne modificato. In altre parole il codice è una cosa viva, in continua <em>evoluzione</em>, la cui capacità di replicazione e mutazione (soprattutto per il codice open-source) lo rende molto vicino ad un essere vivente, con cui condivide molte caratteristiche.</p>
-<h2><a class="header" href="#un-programmatore-è-un-bravo-osservatore" id="un-programmatore-è-un-bravo-osservatore">Un programmatore è un bravo osservatore</a></h2>
-<p>Un programmatore è un informatico, e come sappiamo dal primo anno, il compito principale di un informatico è... risolvere problemi. Per poter risolvere un problema, però, bisogna prima capire <em>qual'è</em> il problema, <em>chi</em> ha il problema e <em>perché</em>. Per poter fare questo, un programmatore deve essere un bravo osservatore della realtà. Più importante del QI o della genialità, è la capacità di saper osservare il mondo, ascoltare le persone, immedesimarsi negli altri e saper trasformare tutto questo in righe di codice che funzionino.</p>
-<h2><a class="header" href="#riferimenti-culturali" id="riferimenti-culturali">Riferimenti culturali</a></h2>
-<p>In questo manuale faccio riferimento ad alcuni autori non prettamente del mondo informatico ma che hanno guidato dal punto di vista concettuale questo corso.</p>
+                        <h1><a class="header" href="#tipi" id="tipi">Tipi</a></h1>
+<p>Tutto comincia con i tipi. </p>
+<p>Per dare una forma ed un senso a quello che ci circonda, dobbiamo poter <em>assegnare</em> a quello che ci percepiamo un <em>nome</em> che rappresenta una categoria, un insieme di proprietà e caratteristiche che accumunano un qualcosa ad altre cose che conosciamo già. Questo &quot;nome comune&quot; di cosa, persona o animale&quot; che ci ricorda i nostri studi elementari e che ha posto le basi alla nostra comprensione della lingua parlata e scritte, si ripropone ora all'inizio dei nostri studi dei linguaggi di programmazione. Questi nomi in programmazione prendono il nome di <em>tipi</em>.</p>
+<h2><a class="header" href="#tipi-fondamentali" id="tipi-fondamentali">Tipi fondamentali</a></h2>
+<p>Esistono alcuni tipi che, più o meno universalmente, costituiscono i mattoncini base per tutti gli altri tipi nella programmazione. Questi tipi rappresentano delle caratteristiche base di ciò che ci circonda.</p>
+<p>Guardiamoci intorno. Io adesso sono ne salotto di casa mia. Cosa vedo? Cosa sento? Cosa percepisco? Vedo una libreria con un certo numero di libri dentro. Sento una musica a basso volume. Sento un po' caldo. Vedo una tastiera con tanti caratteri scritti sopra, ed uno schermo con tante parole. </p>
+<p>I tipi fondamentali sono:</p>
 <ul>
-<li>René Thom: grande matematico e semiologo del '900, nei suoi saggi ha descritto il processo con cui il mondo che ci circonda acquisisce un <em>senso</em> per noi che lo percepiamo.</li>
-<li>Jean Petitot: matematico e filosofo francese, definisce con chiarezza il significato di razionalismo trascendentale, scuola di pensiero a cui mi sento di appartenere. In italiano è stato pubblicato &quot;Per un nuovo illuminismo&quot; (Bompiani, 2013).</li>
+<li>numeri interi: per rappresentare qualcosa che nella nostra descrizione del mondo non può essere diviso o non ci interessa che sia diviso. Ad esempio il numero di libri nella libreria.</li>
+<li>numeri decimali: per rappresentare qualcosa che ha un valore continuo e divisibile. Ad esempio il volume della musica, la temperatura della stanza.</li>
+<li>caratteri: per rappresentare un singolo carattere, numero o in generale simbolo. Ad esempio i singoli caratteri che vediamo sulla tastiera: <code>i</code>, <code>7</code>, <code>€</code>, etc.</li>
+<li>stringhe: per rappresentare una sequenza di caratteri. Ad esempio una stringa può essere una parola sullo schermo, o un'intera riga, o il titolo di un libro, etc.</li>
+<li>liste: per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.</li>
 </ul>
-<h2><a class="header" href="#intelligenza-artificiale" id="intelligenza-artificiale">Intelligenza artificiale</a></h2>
-<p>L'approccio usato in questo manuale ritengo sia anche propedeutico per affrontare lo studio dell'intelligenza artificiale, in cui i concetti esposti acquistano una rilevanza molto maggiore. La morfologia del mondo che noi andiamo a costruire passo passo nella nostra applicazione con la programmazione tradizionale, viene infatti creata in modo automatico, velocissimo e a volte imprevedibile attraverso gli algoritmi di Machine Learning.</p>
+<p>Di seguito un approfondimento su alcuni tipi sopra descritti.</p>
+<h3><a class="header" href="#numeri-interi" id="numeri-interi">Numeri interi</a></h3>
+<p>In matematica, i <a href="https://it.wikipedia.org/wiki/Numero_intero">numero interi</a> possono essere o naturali (zero e i numeri positivi: 0,1,2,3,... ) e relativi (numeri naturali più numeri negativi: ...,-3,-2,-1,0,1,2,3,...). Non c'è un limite inferiore o superiore al valore che un certo numero può assumere</p>
+<p>In informatica, oltre a questo, dobbiamo fare i conti anche con le risorse finite della macchina su cui operiamo. Dobbiamo quindi sempre tener presente che un certo numero intero, occuperà in base alla sua grandezza un certo numero di byte in memoria. Il numero di byte che tipicamente può assumere un intero in memoria è: 1 byte, 2 byte, 4 byte o 8 byte. Un intero di 8 byte è sufficientemente enorme da rappresentare qualsiasi cosa, e di solito non ne servono di più.</p>
+<p>Riassumendo, bisogna avere in mente due cose quando parliamo di interi:</p>
+<ul>
+<li>se il numero sarà sicuramente sempre positivo, o ha senso che possa essere negativo</li>
+<li>quant'è il valore massimo o minimo che nella pratica il numero può avere, che determina il numero di byte da riservare in memoria.</li>
+</ul>
+<blockquote>
+<p>In C/C++, il segno e la grandezza si dichiara esplicitamente. In Python, i numeri interi sono sempre con il segno ed il compilatore assegna automaticamente il numero di byte in base al valore.</p>
+</blockquote>
+<h3><a class="header" href="#numeri-decimali" id="numeri-decimali">Numeri decimali</a></h3>
+<p>I numeri decimali sono quelli con la virgola, e vengono detti anche numeri a virgola mobile, o <em>floating point numbers</em>.</p>
+<p>I numeri decimali in informatica sono sempre con il segno. Anche in questo caso dobbiamo però decidere il numero di byte che occupa in memoria. Il numero di byte che può assumere un numero decimale è: 4 byte o 8 byte. Anche in questo caso, un numero decimale di 8 byte può rappresentare bene praticamente qualsiasi cosa che conosciamo, e non servono più byte.</p>
+<p>Nei processori a 64bit, la dimensione tipica dei numeri decimali è sempre 8 byte, che vengono detti anche <em>double precision floating point numbers</em>, o semplicemente <em>double</em>. Nei processori a 8, 16 o 32 bit, per motivi di performance di solito si assegnano 4 byte e solo in caso di necessità se ne assegnano 8.</p>
+<blockquote>
+<p>Come per gli interi, in C/C++ bisogna dichiarare esplicitamente se un float occupa 4 o 8 byte. In Python occupa sempre 8 byte.</p>
+</blockquote>
+<h3><a class="header" href="#caratteri-e-stringhe" id="caratteri-e-stringhe">Caratteri e stringhe</a></h3>
+<p>Per la rappresentazione dei caratteri bisogna fare più attenzione rispetto a quella degli interi perché esistono tanti standard diversi che co-esistono tra di loro. Semplificando, attualmente esistono due standard principali:</p>
+<ul>
+<li><a href="https://it.wikipedia.org/wiki/ASCII">ASCII</a>: rappresenta i caratteri inglesi (senza accenti o altri segni diacritici), i numeri e alcuni simboli base come <code>@</code>, <code>!</code>, <code>#</code> e simili. Usa un byte di memoria e viene utilizzato in casi particolari o in vecchi sistemi</li>
+<li>[UTF-8](https://it.wikipedia.org/wiki/UTF-8: rappresenta i caratteri di tutte le lingue (italiano, spagnolo, cinese, indiano, sanscrito, greco antico, etc), i segni matematici, le emoji e tanti altri simboli. Usa un numero variabile di byte: per i caratteri più comuni (essenzialmente quelli ASCII) usa un solo byte, in tutti gli altri casi usa due byte. Alcuni esempi di caratteri UTF-8 sono:,<code>Ẽ</code>,<code>≢</code>,<code>©</code>,<code>∂</code>,<code>🌷</code>, etc.</li>
+</ul>
+<h2><a class="header" href="#approfondimento-tipi-statici-dinamici-deboli-e-forti" id="approfondimento-tipi-statici-dinamici-deboli-e-forti">Approfondimento: tipi statici, dinamici, deboli e forti</a></h2>
+<p>La caratteristica che probabilmente differenzia maggiormente i vari linguaggi di programmazione tra di loro, è come il linguaggio gestisce i tipi. Ci sono due assi su cui ci si può muovere:</p>
+<ul>
+<li>static vs dynamic</li>
+<li>weak vs strong</li>
+</ul>
+<p>L'argomento è molto interessante ma anche altrettanto complesso, e richiede una buona conoscenza di come funziona la gestione della memoria, sia durante la compilazione che a runtime.</p>
+<p>Questo piccolo paragrafo è solo per mettervi un po' di curiosità e farvi capire che l'oceano è grande :) Ne parleremo in modo più approfondito l'anno prossimo :D</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../01-base/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../01-base/01-types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../01-base/02-python.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -193,13 +225,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../01-base/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../01-base/01-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../01-base/02-python.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
