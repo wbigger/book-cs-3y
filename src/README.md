@@ -1,11 +1,10 @@
-# Sviluppo HTML5
+# Informatica per progetti
 
-
-**A.S. 2018-2019**
 
 **Istituto di Istruzione Superiore G. Marconi**
 
-**TPSI**
+**Materia: Informatica**
+**Anno: terzo**
 
 Benvenuti ragazzi!
 
