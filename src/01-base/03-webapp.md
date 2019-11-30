@@ -57,7 +57,7 @@ app = Flask("marconi")
 @app.route("/")
 def data_book():
     return json.dumps(
-        [book for book in full_catalogue]
+        [book for book in catalogue]
         )
 ```
 
