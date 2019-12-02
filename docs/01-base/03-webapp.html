@@ -193,13 +193,20 @@ app = Flask(&quot;marconi&quot;)
 @app.route(&quot;/&quot;)
 def data_book():
     return json.dumps(
-        [book for book in full_catalogue]
+        [book for book in catalogue]
         )
 </code></pre>
 <p>Vediamo cosa abbiamo fatto. Abbiamo importato <code>Flask</code> dalla libreria <code>flask</code> e il nostro catalogo dal file <code>library</code> che abbiamo creato precedentemente. Importiamo anche la libreria di sistema <code>json</code>, che è utile per convertire le variabili Python nel formato stringa JSON (vedi dopo. </p>
 <p>La riga <code>app = Flask(&quot;marconi&quot;)</code> crea un web server e gli da il nome di &quot;marconi&quot; (possiamo mettere quello che preferiamo).</p>
 <p>La riga <code>@app.route(&quot;/&quot;)</code> è un'annotazione: sta ad indicare che la funzione successiva deve essere chiamata quando qualcuno prova ad accedere alla pagina web.</p>
-<p>La funzione <code>data_book()</code> viene quindi chiamata quando interroghiamo il web server. Questa funzione ritorna il nostro catalogo in formato JSON.</p>
+<p>La funzione <code>data_book()</code> viene quindi chiamata quando interroghiamo il web server. Questa funzione ritorna il nostro catalogo in formato JSON. È formata dalle seguenti parti:</p>
+<ul>
+<li><code>json.dumps()</code> è una funzione che converte il parametro che gli viene passato in formato JSON</li>
+<li><code>[book for book in catalogue]</code> è una sintassi tipica di Python, che crea una lista con all'interno tutti gli elementi di <code>catalogue</code>.</li>
+</ul>
+<blockquote>
+<p>Attenzione: se book <strong>non</strong> fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo <code>Book</code> in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà <code>__dict__</code>, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe (come <code>__init__</code>). La riga precedente diventerebbe quindi <code>[book.__dict__ for book in catalogue]</code>.</p>
+</blockquote>
 <h3><a class="header" href="#il-formato-json" id="il-formato-json">Il formato JSON</a></h3>
 <p>Fate attenzione: <a href="https://www.json.org/">JSON</a> è un formato per scambiarsi i dati tra macchine (machine-to-machine), ma che può essere letto e scritto abbastanza facilmente anche dagli esseri umani. JSON quindi non è un codice, o un'applicazione, o una libreria, ma è un formato di stringa che permette alle macchine di comunicare fra loro in modo comprensibile. Volendo fare un paragone con la lingua umana, è come la sintassi della frase: per capirsi le persone devono mettere nel corretto ordine soggetto, verbo e complementi, altrimenti non ci si capisce.</p>
 <p>JSON usa le seguenti convenzioni:</p>
