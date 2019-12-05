@@ -167,6 +167,7 @@
 <li>caratteri: per rappresentare un singolo carattere, numero o in generale simbolo. Ad esempio i singoli caratteri che vediamo sulla tastiera: <code>i</code>, <code>7</code>, <code>€</code>, etc.</li>
 <li>stringhe: per rappresentare una sequenza di caratteri. Ad esempio una stringa può essere una parola sullo schermo, o un'intera riga, o il titolo di un libro, etc.</li>
 <li>liste: per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.</li>
+<li>boolean: per cose che possono essere solo vere o false. Ad esempio se la luce è accesa o spenta.</li>
 </ul>
 <p>Di seguito un approfondimento su alcuni tipi sopra descritti.</p>
 <h3><a class="header" href="#numeri-interi" id="numeri-interi">Numeri interi</a></h3>
@@ -193,6 +194,16 @@
 <li><a href="https://it.wikipedia.org/wiki/ASCII">ASCII</a>: rappresenta i caratteri inglesi (senza accenti o altri segni diacritici), i numeri e alcuni simboli base come <code>@</code>, <code>!</code>, <code>#</code> e simili. Usa un byte di memoria e viene utilizzato in casi particolari o in vecchi sistemi</li>
 <li>[UTF-8](https://it.wikipedia.org/wiki/UTF-8: rappresenta i caratteri di tutte le lingue (italiano, spagnolo, cinese, indiano, sanscrito, greco antico, etc), i segni matematici, le emoji e tanti altri simboli. Usa un numero variabile di byte: per i caratteri più comuni (essenzialmente quelli ASCII) usa un solo byte, in tutti gli altri casi usa due byte. Alcuni esempi di caratteri UTF-8 sono:,<code>Ẽ</code>,<code>≢</code>,<code>©</code>,<code>∂</code>,<code>🌷</code>, etc.</li>
 </ul>
+<h3><a class="header" href="#boolean" id="boolean">Boolean</a></h3>
+<p>Come abbiamo detto, rappresenta qualcosa che può essere o vero o falso. Una variabile boolean può essere assegnata in uno dei seguenti:</p>
+<ul>
+<li>direttamente a vero o falso, ad esempio <code>a = True</code></li>
+<li>come risultato di una operazione, ad esempio <code>a = 3 &gt; 2</code></li>
+</ul>
+<p>Attenzione a non abusare del tipo boolean: usarla solo quando concettualmente nel nostro mondo non possono esserci altri valori o valori intermedi. Ad esempio immaginiamo che nel nostro mondo ci sono sedie rosse e gialle. Mettere una variabile boolean del tipo <code>is_red</code>, che mi dice se la sedia è rossa, è una pessima idea. Primo perché non è chiaro cosa succede quando il valore è falso, e secondo perché se domani arrivano delle sedie blu, devo cambiare tutto il codice :(</p>
+<blockquote>
+<p>Uno dei punti su cui variano molto i diversi linguaggi è come e se convertire altri tipi in boolean. Ad esempio, posso considerare il valore <code>0</code> come falso, ed <code>1</code> come vero? Posso dire che una lista vuota è falsa, ed una lista non vuota è vera? Oppure che una stringa vuota è falsa, ed una stringa non vuota è vera? Questo in informatica viene detto &quot;Truthy and Falsy&quot; del linguaggio. Per sapere cosa è vero e falso in Python leggete <a href="https://docs.python.org/2.4/lib/truth.html">qui</a>, in C++ leggete <a href="https://www.geeksforgeeks.org/bool-data-type-in-c/">qui</a>.</p>
+</blockquote>
 <h2><a class="header" href="#approfondimento-tipi-statici-dinamici-deboli-e-forti" id="approfondimento-tipi-statici-dinamici-deboli-e-forti">Approfondimento: tipi statici, dinamici, deboli e forti</a></h2>
 <p>La caratteristica che probabilmente differenzia maggiormente i vari linguaggi di programmazione tra di loro, è come il linguaggio gestisce i tipi. Ci sono due assi su cui ci si può muovere:</p>
 <ul>

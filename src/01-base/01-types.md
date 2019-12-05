@@ -15,6 +15,8 @@ I tipi fondamentali sono:
  - caratteri: per rappresentare un singolo carattere, numero o in generale simbolo. Ad esempio i singoli caratteri che vediamo sulla tastiera: `i`, `7`, `€`, etc.
  - stringhe: per rappresentare una sequenza di caratteri. Ad esempio una stringa può essere una parola sullo schermo, o un'intera riga, o il titolo di un libro, etc.
  - liste: per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.
+- boolean: per cose che possono essere solo vere o false. Ad esempio se la luce è accesa o spenta.
+
 
 Di seguito un approfondimento su alcuni tipi sopra descritti.
 
@@ -42,6 +44,15 @@ Nei processori a 64bit, la dimensione tipica dei numeri decimali è sempre 8 byt
 Per la rappresentazione dei caratteri bisogna fare più attenzione rispetto a quella degli interi perché esistono tanti standard diversi che co-esistono tra di loro. Semplificando, attualmente esistono due standard principali:
 - [ASCII](https://it.wikipedia.org/wiki/ASCII): rappresenta i caratteri inglesi (senza accenti o altri segni diacritici), i numeri e alcuni simboli base come `@`, `!`, `#` e simili. Usa un byte di memoria e viene utilizzato in casi particolari o in vecchi sistemi
 - [UTF-8](https://it.wikipedia.org/wiki/UTF-8: rappresenta i caratteri di tutte le lingue (italiano, spagnolo, cinese, indiano, sanscrito, greco antico, etc), i segni matematici, le emoji e tanti altri simboli. Usa un numero variabile di byte: per i caratteri più comuni (essenzialmente quelli ASCII) usa un solo byte, in tutti gli altri casi usa due byte. Alcuni esempi di caratteri UTF-8 sono:,`Ẽ`,`≢`,`©`,`∂`,`🌷`, etc.
+
+### Boolean
+Come abbiamo detto, un boolean rappresenta qualcosa che può essere o  solo vero o solo falso. Una variabile boolean può essere assegnata in uno dei seguenti modi:
+- direttamente a vero o falso, ad esempio `a = True`
+- come risultato di una operazione logica, ad esempio `a = 3 > 2`
+
+Attenzione a non abusare del tipo boolean: usarlo solo quando concettualmente nel nostro mondo non possono esserci altri valori o valori intermedi. Ad esempio immaginiamo che nel nostro mondo ci sono sedie rosse e gialle. Mettere una variabile boolean del tipo `is_red`, che mi dice se la sedia è rossa, è una pessima idea. Primo perché non è chiaro cosa succede quando il valore è falso e secondo perché se domani arrivano delle sedie blu, devo cambiare tutto il codice :(
+
+> Uno dei punti su cui variano molto i diversi linguaggi è come e se convertire altri tipi in boolean. Ad esempio, posso considerare il valore `0` come falso, ed `1` come vero? Posso dire che una lista vuota è falsa, ed una lista non vuota è vera? Oppure che una stringa vuota è falsa, ed una stringa non vuota è vera? Questo in informatica viene detto "Truthy and Falsy" del linguaggio. Per sapere cosa è vero e falso in Python leggete [qui](https://docs.python.org/2.4/lib/truth.html), in C++ leggete [qui](https://www.geeksforgeeks.org/bool-data-type-in-c/).
 
 ## Approfondimento: tipi statici, dinamici, deboli e forti
 La caratteristica che probabilmente differenzia maggiormente i vari linguaggi di programmazione tra di loro, è come il linguaggio gestisce i tipi. Ci sono due assi su cui ci si può muovere:
