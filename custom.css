@@ -18,6 +18,11 @@ img.left_side {
   float:left;
   margin:5px 20px 0px 5px;
 }
+
+img.w80p {
+  width: 80%;
+}
+
 img.w50p {
   width: 50%;
 }

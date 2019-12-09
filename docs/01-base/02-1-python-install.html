@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Python - Course Template</title>
+        <title>Installazione di Python - Course Template</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">3.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/02-python.html" class="active"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">4.1.</strong> Installazione di Python</a></li></ol></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">3.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/02-1-python-install.html" class="active"><strong aria-hidden="true">4.1.</strong> Installazione di Python</a></li></ol></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,95 +154,38 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#python" id="python">Python</a></h1>
-<p class="img-container">
-<img class="right_side w20p" title="Python logo" alt="Python logo" src="assets/python-logo.png">
-<p>Il primo linguaggio che vedremo quest'anno è <a href="https://www.python.org/">Python</a>. Python è un linguaggio completamente open-source, il codice sorgente è reperibile sulla pagina <a href="https://github.com/python">ufficiale di GitHub</a> ed è rilasciato sotto la <a href="https://opensource.org/licenses/Python-2.0">Python License</a>.</p>
+                        <h1><a class="header" href="#installare-python" id="installare-python">Installare Python</a></h1>
+<p>Per installare Python su Visual Studio Code, <a href="https://code.visualstudio.com/docs/python/python-tutorial">questa</a> è la guida ufficiale. Riepiloghiamo in breve qui i passaggi.</p>
+<h2><a class="header" href="#installare-python-sul-proprio-computer" id="installare-python-sul-proprio-computer">Installare Python sul proprio computer</a></h2>
+<p>Andare sul sito <a href="https://www.python.org/downloads/">Python downloads</a> e scaricare l'ultima versione di Python premendo il bottoncione giallo grande con scritto &quot;Download Python&quot;.</p>
+<p>Quando lo avviate, vedrete una schermata di questo genere (la versione di Python potrebbe cambiare):</p>
+<p class="img-container centered">
+<img class="w80p" src="assets/python-install.png" alt="Install Python">
 </p>
-<p class="img-container w20p">
-<img class="left_side" title="Guido van Rossum" alt="Python logo" src="assets/guido-van-rossum.jpg">
-Python è stato creato alla fine degli anni '80 dall'olandese <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a>, all'età di circa trent'anni. Come molti colleghi nell'ambito informatico, il suo operato è stato costantemente guidato da alcuni ideali, in particolare van Rossum credeva che la programmazione dovesse accessibile a tutti, e quindi le scelte per il linguaggio hanno avuto sempre questa direzione. Nel 1999 sono state pubblicate delle linee guida che riassumevano questi concetti, conosciute come <a href="https://www.python.org/dev/peps/pep-0020/">"The Zen of Python"</a>. È anche possibile leggere queste linee guida direttamente dentro Python, scrivendo `import this` :)
+<p>Attenzione: selezionate l'ultima spunta in basso &quot;Add Python to PATH&quot; per poter usare i comandi Python anche da terminale.</p>
+<p>Seguite le istruzioni fino in fondo, e se necessario riavviate Visual Studio Code.</p>
+<h2><a class="header" href="#visual-studio-code" id="visual-studio-code">Visual Studio Code</a></h2>
+<p>Aprite Visual Studio Code ed installate l'estensione <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python di Microsoft</a>. </p>
+<p class="img-container centered">
+<img class="w80p" src="assets/python-extension.png" alt="Install Python extension">
 </p>
-<blockquote>
-<p>Se volete provare gli snippet di codice in questa pagina, potete usare il <a href="https://code.sololearn.com/#py">playground online</a> di SoloLearn.</p>
-</blockquote>
-<h2><a class="header" href="#caratteristiche" id="caratteristiche">Caratteristiche</a></h2>
-<p>Python ha una sintassi essenziale, eliminando quasi tutta la punteggiatura.</p>
-<p>Esempio di un programma completo Python valido:</p>
-<pre><code class="language-py">catalogue = [&quot;Harry Potter e il calice di fuoco&quot;, &quot;Il rosso e il nero&quot;, &quot;Il piccolo principe&quot;]
-for title in catalogue:
-   print(title)
-print(&quot;goodbye&quot;)
-</code></pre>
-<p>Nella prima riga, viene dichiarata una nuova variabile <code>catalogue</code>. Il tipo della variabile viene <em>inferito</em> dal valore assegnato; in questo caso, siccome assegniamo qualcosa che è tra parentesi quadre, il tipo di <code>catalogue</code> è una lista. Fate attenzione: la riga <em>non</em> finisce con il punto e virgola!</p>
-<p>Nella seconda riga c'è un ciclo <code>for</code>. Notate che non ci sono parentesi di nessun tipo, né tonde né graffe; attenzione però che la riga in questo caso finisce con i due punti Le stesse regole valgono anche per il condizionale <code>if</code>. </p>
-<p>Ma se non ci sono parentesi graffe, come si fa a sapere dove finisce il contenuto del ciclo <code>for</code>? Qui c'è il colpo di genio di van Rossum: usare l'indentazione del codice per definire dove finiscono i blocchi, ed obbligare lo sviluppatore ad usare le buone pratiche di indentazione!</p>
-<p>Quindi vediamo che il contenuto del <code>for</code> è solo <code>print(title)</code>, mentre la riga successiva, la quarta, è fuori dal ciclo.</p>
-<p>Se eseguiamo il codice, avremo il seguente output su console:</p>
-<pre><code>Harry Potter e il calice di fuoco
-Il rosso e il nero
-Il piccolo principe
-goodbye
-</code></pre>
-<h2><a class="header" href="#importare-una-libreria-esterna" id="importare-una-libreria-esterna">Importare una libreria esterna</a></h2>
-<p>Se ci servono delle librerie esterne per fare delle operazioni particolari, su usano le keyword <code>import</code> e <code>from</code>. Ad esempio immaginiamo di voler stampare la data e l'ora attuali. </p>
-<pre><code class="language-py">from datetime import datetime
-print(datetime.now())
-</code></pre>
-<p>che avrà come output il giorno e l'ora attuali, ad esempio:</p>
-<pre><code>2019-11-29 21:57:27.676783
-</code></pre>
-<p>In generale, dopo il <code>from</code> ci va il nome di un file Python (senza estensione), e dopo <code>import</code> il nome di una variabile. In questo esempio, nella prima riga importiamo la variabile <code>datetime</code> da un file che si chiama con lo stesso nome. Il file <code>datetime</code> nel caso specifico non è creato da noi ma è una libreria di sistema, ma possiamo usare la stessa sintassi anche per i nostri file.</p>
-<h2><a class="header" href="#creare-una-classe" id="creare-una-classe">Creare una classe</a></h2>
-<p>Per creare una classe, ad esempio la classe <code>Book</code>, si usa la seguente sintassi:</p>
-<pre><code class="language-py">class Book:
-   def __init__(self,title,author):
-      self.title = title
-      self.author = author
-</code></pre>
-<p>Vediamo bene cosa abbiamo fatto. La prima riga <code>class Book</code> dichiara la classe Book. Nella seconda riga stiamo usando la funzione di sistema <code>__init__(self,...)</code> che è il <em>costruttore</em> della classe, ovvero serve per costruire un nuovo <em>oggetto</em> della classe. Il primo parametro è sempre la keyword <code>self</code>, che identifica l'oggetto che stiamo andando a creare. I parametri successivi servono per inizializzare l'oggetto; nel nostro caso stiamo dicendo che il nostro libro deve sempre avere un autore ed un titolo.</p>
-<blockquote>
-<p>Si può vedere che <strong>init</strong> è una funzione di sistema perché il nome inizia e finisce con due trattini bassi. Questa è una convenzione specifica di Python.</p>
-</blockquote>
-<p>Per creare un oggetto di questa classe, usiamo la seguente sintassi:</p>
-<pre><code class="language-py">harry_potter = Book(&quot;Harry Potter ed il principe mezzosangue&quot;,&quot;J.K.Rowling&quot;)
-
-print(harry_potter.title)
-</code></pre>
-<p>Stiamo dichiarando una variabile chiamata <code>harry_potter</code> che è un oggetto della classe <code>Book</code>, inizializzata con i parametri che seguono. Fate attenzione: <em>non</em> bisogna specificare il parametro <code>self</code> quando si costruisce un oggetto, perché è una variabile che passa Python automaticamente alla funzione <code>__init__</code>.</p>
-<p>Mettendo insieme i pezzi, il codice finale per creare una classe ed un oggetto di questa classe sarà:</p>
-<pre><code class="language-py">class Book:
-   def __init__(self,title,author):
-      self.title = title
-      self.author = author
-   
-harry_potter = Book(&quot;Harry Potter ed il principe mezzosangue&quot;,&quot;J.K.Rowling&quot;)
-
-print(harry_potter.title)
-</code></pre>
-<p>L'output di questo snippet sarà:</p>
-<pre><code>Harry Potter ed il principe mezzosangue
-</code></pre>
-<p>Notate l'indentazione: si può capire che la variabile <code>harry_potter</code> viene dichiarata <em>fuori</em> dalla classe perché non ha indentazione.</p>
-<h3><a class="header" href="#librerie-aggiuntive" id="librerie-aggiuntive">Librerie aggiuntive</a></h3>
-<p>Solo le librerie esterne più comuni, come <code>datetime</code>, sono già pre-installate in Python. Esistono infatti decine di migliaia di librerie, in continuo cambiamento, scaricarle tutte all'inizio sarebbe impossibile oltre che inutile! </p>
-<p>Fortunatamente esiste un semplice comando per scaricare ed installare nuove librerie. Aprire un terminale sul proprio computer (anche all'interno di Visual Studio Code), e scrivere:</p>
-<pre><code>pip3 install &lt;nome-libreria&gt;
-</code></pre>
-<p>Vediamo che <code>pip3</code> è un comando che gestisce i pacchetti Python (Pip sta per &quot;Pip installs package&quot;, è un acronimo ricorsivo), e <code>&lt;nome-libreria&gt;</code> è il nome della libreria che vogliamo scaricare.</p>
+<p>Una volta installata, quando aprirete un file con estensione <code>.py</code> vi comparirà nella barra blu in basso la possibilità di selezionare l'interprete Python. Selezionate l'ultima versione che avete appena installato.</p>
+<p class="img-container centered">
+<img class="w50p" src="assets/python-select-env.png" alt="Select Python Interpreter">
+</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../01-base/01-types.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../01-base/02-python.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../01-base/02-1-python-install.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../01-base/03-webapp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -254,13 +197,13 @@ print(harry_potter.title)
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../01-base/01-types.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../01-base/02-python.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../01-base/02-1-python-install.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../01-base/03-webapp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

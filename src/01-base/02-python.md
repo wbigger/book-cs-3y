@@ -17,6 +17,8 @@ Python è stato creato alla fine degli anni '80 dall'olandese <a href="https://e
 
 </p>
 
+> Se volete provare gli snippet di codice in questa pagina, potete usare il [playground online](https://code.sololearn.com/#py) di SoloLearn.
+
 ## Caratteristiche
 Python ha una sintassi essenziale, eliminando quasi tutta la punteggiatura.
 
@@ -59,6 +61,50 @@ che avrà come output il giorno e l'ora attuali, ad esempio:
 ```
 
 In generale, dopo il `from` ci va il nome di un file Python (senza estensione), e dopo `import` il nome di una variabile. In questo esempio, nella prima riga importiamo la variabile `datetime` da un file che si chiama con lo stesso nome. Il file `datetime` nel caso specifico non è creato da noi ma è una libreria di sistema, ma possiamo usare la stessa sintassi anche per i nostri file.
+
+## Creare una classe
+Per creare una classe, ad esempio la classe `Book`, si usa la seguente sintassi:
+```py
+class Book:
+   def __init__(self,title,author):
+      self.title = title
+      self.author = author
+```
+
+Vediamo bene cosa abbiamo fatto. La prima riga `class Book` dichiara la classe Book. Nella seconda riga stiamo usando la funzione di sistema `__init__(self,...)` che è il _costruttore_ della classe, ovvero serve per costruire un nuovo _oggetto_ della classe. Il primo parametro è sempre la keyword `self`, che identifica l'oggetto che stiamo andando a creare. I parametri successivi servono per inizializzare l'oggetto; nel nostro caso stiamo dicendo che il nostro libro deve sempre avere un autore ed un titolo.
+
+> Si può vedere che __init__ è una funzione di sistema perché il nome inizia e finisce con due trattini bassi. Questa è una convenzione specifica di Python.
+
+Per creare un oggetto di questa classe, usiamo la seguente sintassi:
+
+```py
+harry_potter = Book("Harry Potter ed il principe mezzosangue","J.K.Rowling")
+
+print(harry_potter.title)
+```
+
+Stiamo dichiarando una variabile chiamata `harry_potter` che è un oggetto della classe `Book`, inizializzata con i parametri che seguono. Fate attenzione: _non_ bisogna specificare il parametro `self` quando si costruisce un oggetto, perché è una variabile che passa Python automaticamente alla funzione `__init__`.
+
+Mettendo insieme i pezzi, il codice finale per creare una classe ed un oggetto di questa classe sarà:
+
+```py
+class Book:
+   def __init__(self,title,author):
+      self.title = title
+      self.author = author
+   
+harry_potter = Book("Harry Potter ed il principe mezzosangue","J.K.Rowling")
+
+print(harry_potter.title)
+```
+
+L'output di questo snippet sarà:
+
+```
+Harry Potter ed il principe mezzosangue
+```
+
+Notate l'indentazione: si può capire che la variabile `harry_potter` viene dichiarata _fuori_ dalla classe perché non ha indentazione.
 
 ### Librerie aggiuntive
 Solo le librerie esterne più comuni, come `datetime`, sono già pre-installate in Python. Esistono infatti decine di migliaia di librerie, in continuo cambiamento, scaricarle tutte all'inizio sarebbe impossibile oltre che inutile! 
