@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">3.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">4.1.</strong> Installazione di Python</a></li></ol></li><li class="expanded "><a href="../01-base/03-webapp.html" class="active"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">3.</strong> Tipi</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">3.1.</strong> Classi</a></li></ol></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">4.1.</strong> Installazione di Python</a></li></ol></li><li class="expanded "><a href="../01-base/03-webapp.html" class="active"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -202,11 +202,21 @@ def data_book():
 <p>La funzione <code>data_book()</code> viene quindi chiamata quando interroghiamo il web server. Questa funzione ritorna il nostro catalogo in formato JSON. È formata dalle seguenti parti:</p>
 <ul>
 <li><code>json.dumps()</code> è una funzione che converte il parametro che gli viene passato in formato JSON</li>
-<li><code>[book for book in catalogue]</code> è una sintassi tipica di Python, che crea una lista con all'interno tutti gli elementi di <code>catalogue</code>.</li>
+<li><code>[book for book in catalogue]</code> è una sintassi tipica di Python, che crea una nuova lista con all'interno tutti gli elementi di <code>catalogue</code>.</li>
 </ul>
-<blockquote>
-<p>Attenzione: se book <strong>non</strong> fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo <code>Book</code> in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà <code>__dict__</code>, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe (come <code>__init__</code>). La riga precedente diventerebbe quindi <code>[book.__dict__ for book in catalogue]</code>.</p>
-</blockquote>
+<p>Nel dettaglio, stiamo dicendo che per ogni elemento <code>book</code> all'interno della lista <code>catalogue</code>, vogliamo creare un elemento con esattamente lo stesso valore di <code>book</code>.</p>
+<p>La precedente forma compatta è equivalente al seguente codice:</p>
+<pre><code class="language-py">mylist = []
+for book in catalogue:
+    mylist.append(book)
+</code></pre>
+<p>Come si può vedere, nella forma compatta non abbiamo bisogno di dichiarare la variabile di appoggio <code>mylist</code>.</p>
+<p>Attenzione: se book <strong>non</strong> fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo <code>Book</code> in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà <code>__dict__</code>, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:</p>
+<pre><code class="language-py">def data_book():
+    return json.dumps(
+        [book.__dict__ for book in catalogue]
+        )
+</code></pre>
 <h3><a class="header" href="#il-formato-json" id="il-formato-json">Il formato JSON</a></h3>
 <p>Fate attenzione: <a href="https://www.json.org/">JSON</a> è un formato per scambiarsi i dati tra macchine (machine-to-machine), ma che può essere letto e scritto abbastanza facilmente anche dagli esseri umani. JSON quindi non è un codice, o un'applicazione, o una libreria, ma è un formato di stringa che permette alle macchine di comunicare fra loro in modo comprensibile. Volendo fare un paragone con la lingua umana, è come la sintassi della frase: per capirsi le persone devono mettere nel corretto ordine soggetto, verbo e complementi, altrimenti non ci si capisce.</p>
 <p>JSON usa le seguenti convenzioni:</p>

@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="01-base/01-types.html"><strong aria-hidden="true">3.</strong> Tipi</a></li><li class="expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">4.1.</strong> Installazione di Python</a></li></ol></li><li class="expanded "><a href="01-base/03-webapp.html"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="01-base/01-types.html"><strong aria-hidden="true">3.</strong> Tipi</a></li><li><ol class="section"><li class="expanded "><a href="01-base/01-types-classes.html"><strong aria-hidden="true">3.1.</strong> Classi</a></li></ol></li><li class="expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">4.1.</strong> Installazione di Python</a></li></ol></li><li class="expanded "><a href="01-base/03-webapp.html"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -197,8 +197,8 @@ sapere indispensabile per chi vuole diventare un informatico.</p>
 <li>numeri decimali: per rappresentare qualcosa che ha un valore continuo e divisibile. Ad esempio il volume della musica, la temperatura della stanza.</li>
 <li>caratteri: per rappresentare un singolo carattere, numero o in generale simbolo. Ad esempio i singoli caratteri che vediamo sulla tastiera: <code>i</code>, <code>7</code>, <code>€</code>, etc.</li>
 <li>stringhe: per rappresentare una sequenza di caratteri. Ad esempio una stringa può essere una parola sullo schermo, o un'intera riga, o il titolo di un libro, etc.</li>
-<li>liste: per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.</li>
 <li>boolean: per cose che possono essere solo vere o false. Ad esempio se la luce è accesa o spenta.</li>
+<li>liste (o array): per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.</li>
 </ul>
 <p>Di seguito un approfondimento su alcuni tipi sopra descritti.</p>
 <h3><a class="header" href="#numeri-interi" id="numeri-interi">Numeri interi</a></h3>
@@ -225,6 +225,14 @@ sapere indispensabile per chi vuole diventare un informatico.</p>
 <li><a href="https://it.wikipedia.org/wiki/ASCII">ASCII</a>: rappresenta i caratteri inglesi (senza accenti o altri segni diacritici), i numeri e alcuni simboli base come <code>@</code>, <code>!</code>, <code>#</code> e simili. Usa un byte di memoria e viene utilizzato in casi particolari o in vecchi sistemi</li>
 <li>[UTF-8](https://it.wikipedia.org/wiki/UTF-8: rappresenta i caratteri di tutte le lingue (italiano, spagnolo, cinese, indiano, sanscrito, greco antico, etc), i segni matematici, le emoji e tanti altri simboli. Usa un numero variabile di byte: per i caratteri più comuni (essenzialmente quelli ASCII) usa un solo byte, in tutti gli altri casi usa due byte. Alcuni esempi di caratteri UTF-8 sono:,<code>Ẽ</code>,<code>≢</code>,<code>©</code>,<code>∂</code>,<code>🌷</code>, etc.</li>
 </ul>
+<p>Nel linguaggio C, per rappresentare un singolo carattere si usa il singolo apice, ad esempio <code>'k'</code> è il singolo carattere <code>k</code>; per rappresentare le stringhe si usa il doppio apice, ad esempio <code>&quot;hello&quot;</code> è la stringa <code>hello</code>. In C l'espressione <code>'hello'</code> ritorna un errore.</p>
+<p>In Python, non si può rappresentare un singolo carattere, ma esistono solo stringhe. Per rappresentare le stringhe, si può usare sia indifferentemente sia il singolo che il doppio apice, quindi le espressioni <code>&quot;hello&quot;</code> ed <code>'hello'</code> sono equivalenti.</p>
+<blockquote>
+<p>Come scegliere tra singolo e doppio apice? Dipende se all'interno della stringa che vogliamo rappresentare, ci sono degli apici. Se ci sono dei singoli apici all'interno, conviene usare i doppi apici per le stringhe, in modo che la stringa <code>&quot;l'alba è meravigliosa&quot;</code> sia valida. Se invece all'interno della stringa abbiamo doppi apici, conviene usare esternamente i singoli apici, in modo che ad esempio <code>'&quot;Python&quot; è bello'</code> sia una stringa valida. Se all'interno della nostra stringa ci sono sia singoli che doppi apici, dobbiamo usare il carattere di escape <code>\'</code> e <code>\&quot;</code>; ad esempio possiamo scrivere <code>'l\'alba è &quot;meravigliosa&quot;</code> oppure `&quot;l'alba è &quot;meravigliosa&quot;'. In caso di incertezza comunque, lo standard è utilizzare il singolo apice.</p>
+</blockquote>
+<blockquote>
+<p>In Python esistono anche altri modi di rappresentare le stringhe, lo vedremo più avanti.</p>
+</blockquote>
 <h3><a class="header" href="#boolean" id="boolean">Boolean</a></h3>
 <p>Come abbiamo detto, un boolean rappresenta qualcosa che può essere o  solo vero o solo falso. Una variabile boolean può essere assegnata in uno dei seguenti modi:</p>
 <ul>
@@ -235,6 +243,11 @@ sapere indispensabile per chi vuole diventare un informatico.</p>
 <blockquote>
 <p>Uno dei punti su cui variano molto i diversi linguaggi è come e se convertire altri tipi in boolean. Ad esempio, posso considerare il valore <code>0</code> come falso, ed <code>1</code> come vero? Posso dire che una lista vuota è falsa, ed una lista non vuota è vera? Oppure che una stringa vuota è falsa, ed una stringa non vuota è vera? Questo in informatica viene detto &quot;Truthy and Falsy&quot; del linguaggio. Per sapere cosa è vero e falso in Python leggete <a href="https://docs.python.org/2.4/lib/truth.html">qui</a>, in C++ leggete <a href="https://www.geeksforgeeks.org/bool-data-type-in-c/">qui</a>.</p>
 </blockquote>
+<h3><a class="header" href="#liste-o-array" id="liste-o-array">Liste (o array)</a></h3>
+<p>In quanto esseri umani, una delle cose fondamentali che facciamo continuamente è raggruppare insieme le intorno a noi che abbiano una qualche caratteristica in comune. Potrebbero essere un insieme di libri che si trovano sullo stesso scaffale, o tutta la frutta che abbiamo in casa, o gli articoli che si trovano nel magazzino. Questi insiemi sono rappresentati nei diversi linguaggi di programmazione in modo molto vario e con diversi nomi, ma quasi sempre sono un tipo base del linguaggio stesso.</p>
+<p>Nonostante le diversità, una caratteristica comune di tutti i linguaggi è che per definire e manipolare le liste si usano le parentesi quadre <code>[]</code>. Ad esempio, una lista di nomi si può definire come <code>names = [&quot;John&quot;,&quot;Mario&quot;,Akira&quot;]</code>, e per leggere un elemento di una lista si usa ad esempio <code>names[1]</code>.</p>
+<p>Attenzione: per convenzione, quasi tutti i linguaggi, inclusi C e Python, cominciano a contare da <code>0</code>, mentre noi nella vita quotidiana cominciamo da <code>1</code>. Nella pratica dell'informatica quindi, se una lista ha 3 elementi, il primo elemento della lista è l'elemento <code>0</code>, e l'ultimo è l'elemento <code>2</code>. Vedremo degli esempi in seguito.</p>
+<p>Una nota sulla nomenclatura: il tipo base di lista in C si chiama <em>array</em>, mentre in Python si chiama <em>list</em>. Tecnicamente tra liste e array ci sono delle differenze, ma quello che interessa a noi in questo momento è che in tutti i linguaggi esistono dei tipi base per rappresentare un insieme di oggetti con delle caratteristiche in comune.</p>
 <h2><a class="header" href="#approfondimento-tipi-statici-dinamici-deboli-e-forti" id="approfondimento-tipi-statici-dinamici-deboli-e-forti">Approfondimento: tipi statici, dinamici, deboli e forti</a></h2>
 <p>La caratteristica che probabilmente differenzia maggiormente i vari linguaggi di programmazione tra di loro, è come il linguaggio gestisce i tipi. Ci sono due assi su cui ci si può muovere:</p>
 <ul>
@@ -243,6 +256,18 @@ sapere indispensabile per chi vuole diventare un informatico.</p>
 </ul>
 <p>L'argomento è molto interessante ma anche altrettanto complesso, e richiede una buona conoscenza di come funziona la gestione della memoria, sia durante la compilazione che a runtime.</p>
 <p>Questo piccolo paragrafo è solo per mettervi un po' di curiosità e farvi capire che l'oceano è grande :) Ne parleremo in modo più approfondito l'anno prossimo :D</p>
+<h1><a class="header" href="#classi" id="classi">Classi</a></h1>
+<p>Finora abbiamo visto solo i tipi base. Ma se volessimo rappresentare nel nostro mondo qualcosa di più complesso? Ad esempio se volessimo rappresentare in modo semplice un libro con diverse caratteristiche, come ad esempio autore, titolo, numero di pagine, peso, colore? Ci servirebbe un modo per comporre i tipi base insieme, per costruire il concetto che vogliamo rappresentare, un po' come dei mattoncini lego che costruiscono un oggetto più grande.</p>
+<p>Il modo più comune in informatica per raggiungere questo obiettivo è creare delle <strong>classi</strong> di oggetti.</p>
+<blockquote>
+<p>Come sempre, nei diversi linguaggi di programmazione ci sono moltissime varianti del concetto di classe. Noi per ora ci limitiamo a vedere C++ e Python (nota: C non ha il concetto di classe).</p>
+</blockquote>
+<p>Una classe possiamo immaginarla come uno <em>stampino</em> per creare <em>oggetti</em> tutti simili fra di loro.</p>
+<p>Useremo in modo estensivo le classi, quindi è bene cominciare a prendere subito familiarità con questo concetto.</p>
+<blockquote>
+<p>Per approfondimenti vedi anche il materiale del <a href="https://wbigger.github.io/book-programming/chap2/01-classes.html">secondo anno</a>.</p>
+</blockquote>
+<p>Quando da una classe creiamo un oggetto, dobbiamo dire al programma come fare a <em>costruire</em> quel dato oggetto, ad esempio qual'è il titolo del libro, o l'autore, e così via. Abbiamo quindi bisogno di una funzione che ci aiuti in questo compito; tale funzione prende il nome di <em>costruttore</em> della classe.</p>
 <h1><a class="header" href="#python" id="python">Python</a></h1>
 <p class="img-container">
 <img class="right_side w20p" title="Python logo" alt="Python logo" src="01-base/assets/python-logo.png">
@@ -319,6 +344,20 @@ print(harry_potter.title)
 <pre><code>pip3 install &lt;nome-libreria&gt;
 </code></pre>
 <p>Vediamo che <code>pip3</code> è un comando che gestisce i pacchetti Python (Pip sta per &quot;Pip installs package&quot;, è un acronimo ricorsivo), e <code>&lt;nome-libreria&gt;</code> è il nome della libreria che vogliamo scaricare.</p>
+<h2><a class="header" href="#riferimenti-w3schools" id="riferimenti-w3schools">Riferimenti W3Schools</a></h2>
+<p>Il sito w3schools è un buon riferimento per imparare il Python. Consigliamo in particolare le seguenti pagine:</p>
+<ul>
+<li><a href="https://www.w3schools.com/python/python_datatypes.asp">Tipi base</a></li>
+<li><a href="https://www.w3schools.com/python/python_lists.asp">Liste</a></li>
+<li><a href="https://www.w3schools.com/python/python_for_loops.asp">For loop</a></li>
+<li><a href="https://www.w3schools.com/python/python_functions.asp">Funzioni</a></li>
+<li><a href="https://www.w3schools.com/python/python_classes.asp">Classi</a></li>
+</ul>
+<p>A breve ci serviranno anche i seguenti concetti:</p>
+<ul>
+<li><a href="https://www.w3schools.com/python/python_json.asp">JSON</a></li>
+<li><a href="https://www.w3schools.com/python/python_pip.asp">PIP</a></li>
+</ul>
 <h1><a class="header" href="#installare-python" id="installare-python">Installare Python</a></h1>
 <p>Per installare Python su Visual Studio Code, <a href="https://code.visualstudio.com/docs/python/python-tutorial">questa</a> è la guida ufficiale. Riepiloghiamo in breve qui i passaggi.</p>
 <h2><a class="header" href="#installare-python-sul-proprio-computer" id="installare-python-sul-proprio-computer">Installare Python sul proprio computer</a></h2>
@@ -386,11 +425,21 @@ def data_book():
 <p>La funzione <code>data_book()</code> viene quindi chiamata quando interroghiamo il web server. Questa funzione ritorna il nostro catalogo in formato JSON. È formata dalle seguenti parti:</p>
 <ul>
 <li><code>json.dumps()</code> è una funzione che converte il parametro che gli viene passato in formato JSON</li>
-<li><code>[book for book in catalogue]</code> è una sintassi tipica di Python, che crea una lista con all'interno tutti gli elementi di <code>catalogue</code>.</li>
+<li><code>[book for book in catalogue]</code> è una sintassi tipica di Python, che crea una nuova lista con all'interno tutti gli elementi di <code>catalogue</code>.</li>
 </ul>
-<blockquote>
-<p>Attenzione: se book <strong>non</strong> fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo <code>Book</code> in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà <code>__dict__</code>, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe (come <code>__init__</code>). La riga precedente diventerebbe quindi <code>[book.__dict__ for book in catalogue]</code>.</p>
-</blockquote>
+<p>Nel dettaglio, stiamo dicendo che per ogni elemento <code>book</code> all'interno della lista <code>catalogue</code>, vogliamo creare un elemento con esattamente lo stesso valore di <code>book</code>.</p>
+<p>La precedente forma compatta è equivalente al seguente codice:</p>
+<pre><code class="language-py">mylist = []
+for book in catalogue:
+    mylist.append(book)
+</code></pre>
+<p>Come si può vedere, nella forma compatta non abbiamo bisogno di dichiarare la variabile di appoggio <code>mylist</code>.</p>
+<p>Attenzione: se book <strong>non</strong> fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo <code>Book</code> in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà <code>__dict__</code>, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:</p>
+<pre><code class="language-py">def data_book():
+    return json.dumps(
+        [book.__dict__ for book in catalogue]
+        )
+</code></pre>
 <h3><a class="header" href="#il-formato-json" id="il-formato-json">Il formato JSON</a></h3>
 <p>Fate attenzione: <a href="https://www.json.org/">JSON</a> è un formato per scambiarsi i dati tra macchine (machine-to-machine), ma che può essere letto e scritto abbastanza facilmente anche dagli esseri umani. JSON quindi non è un codice, o un'applicazione, o una libreria, ma è un formato di stringa che permette alle macchine di comunicare fra loro in modo comprensibile. Volendo fare un paragone con la lingua umana, è come la sintassi della frase: per capirsi le persone devono mettere nel corretto ordine soggetto, verbo e complementi, altrimenti non ci si capisce.</p>
 <p>JSON usa le seguenti convenzioni:</p>

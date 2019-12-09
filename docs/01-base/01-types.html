@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="../01-base/01-types.html" class="active"><strong aria-hidden="true">3.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">4.1.</strong> Installazione di Python</a></li></ol></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="../01-base/01-types.html" class="active"><strong aria-hidden="true">3.</strong> Tipi</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">3.1.</strong> Classi</a></li></ol></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">4.1.</strong> Installazione di Python</a></li></ol></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -166,8 +166,8 @@
 <li>numeri decimali: per rappresentare qualcosa che ha un valore continuo e divisibile. Ad esempio il volume della musica, la temperatura della stanza.</li>
 <li>caratteri: per rappresentare un singolo carattere, numero o in generale simbolo. Ad esempio i singoli caratteri che vediamo sulla tastiera: <code>i</code>, <code>7</code>, <code>€</code>, etc.</li>
 <li>stringhe: per rappresentare una sequenza di caratteri. Ad esempio una stringa può essere una parola sullo schermo, o un'intera riga, o il titolo di un libro, etc.</li>
-<li>liste: per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.</li>
 <li>boolean: per cose che possono essere solo vere o false. Ad esempio se la luce è accesa o spenta.</li>
+<li>liste (o array): per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.</li>
 </ul>
 <p>Di seguito un approfondimento su alcuni tipi sopra descritti.</p>
 <h3><a class="header" href="#numeri-interi" id="numeri-interi">Numeri interi</a></h3>
@@ -194,6 +194,14 @@
 <li><a href="https://it.wikipedia.org/wiki/ASCII">ASCII</a>: rappresenta i caratteri inglesi (senza accenti o altri segni diacritici), i numeri e alcuni simboli base come <code>@</code>, <code>!</code>, <code>#</code> e simili. Usa un byte di memoria e viene utilizzato in casi particolari o in vecchi sistemi</li>
 <li>[UTF-8](https://it.wikipedia.org/wiki/UTF-8: rappresenta i caratteri di tutte le lingue (italiano, spagnolo, cinese, indiano, sanscrito, greco antico, etc), i segni matematici, le emoji e tanti altri simboli. Usa un numero variabile di byte: per i caratteri più comuni (essenzialmente quelli ASCII) usa un solo byte, in tutti gli altri casi usa due byte. Alcuni esempi di caratteri UTF-8 sono:,<code>Ẽ</code>,<code>≢</code>,<code>©</code>,<code>∂</code>,<code>🌷</code>, etc.</li>
 </ul>
+<p>Nel linguaggio C, per rappresentare un singolo carattere si usa il singolo apice, ad esempio <code>'k'</code> è il singolo carattere <code>k</code>; per rappresentare le stringhe si usa il doppio apice, ad esempio <code>&quot;hello&quot;</code> è la stringa <code>hello</code>. In C l'espressione <code>'hello'</code> ritorna un errore.</p>
+<p>In Python, non si può rappresentare un singolo carattere, ma esistono solo stringhe. Per rappresentare le stringhe, si può usare sia indifferentemente sia il singolo che il doppio apice, quindi le espressioni <code>&quot;hello&quot;</code> ed <code>'hello'</code> sono equivalenti.</p>
+<blockquote>
+<p>Come scegliere tra singolo e doppio apice? Dipende se all'interno della stringa che vogliamo rappresentare, ci sono degli apici. Se ci sono dei singoli apici all'interno, conviene usare i doppi apici per le stringhe, in modo che la stringa <code>&quot;l'alba è meravigliosa&quot;</code> sia valida. Se invece all'interno della stringa abbiamo doppi apici, conviene usare esternamente i singoli apici, in modo che ad esempio <code>'&quot;Python&quot; è bello'</code> sia una stringa valida. Se all'interno della nostra stringa ci sono sia singoli che doppi apici, dobbiamo usare il carattere di escape <code>\'</code> e <code>\&quot;</code>; ad esempio possiamo scrivere <code>'l\'alba è &quot;meravigliosa&quot;</code> oppure `&quot;l'alba è &quot;meravigliosa&quot;'. In caso di incertezza comunque, lo standard è utilizzare il singolo apice.</p>
+</blockquote>
+<blockquote>
+<p>In Python esistono anche altri modi di rappresentare le stringhe, lo vedremo più avanti.</p>
+</blockquote>
 <h3><a class="header" href="#boolean" id="boolean">Boolean</a></h3>
 <p>Come abbiamo detto, un boolean rappresenta qualcosa che può essere o  solo vero o solo falso. Una variabile boolean può essere assegnata in uno dei seguenti modi:</p>
 <ul>
@@ -204,6 +212,11 @@
 <blockquote>
 <p>Uno dei punti su cui variano molto i diversi linguaggi è come e se convertire altri tipi in boolean. Ad esempio, posso considerare il valore <code>0</code> come falso, ed <code>1</code> come vero? Posso dire che una lista vuota è falsa, ed una lista non vuota è vera? Oppure che una stringa vuota è falsa, ed una stringa non vuota è vera? Questo in informatica viene detto &quot;Truthy and Falsy&quot; del linguaggio. Per sapere cosa è vero e falso in Python leggete <a href="https://docs.python.org/2.4/lib/truth.html">qui</a>, in C++ leggete <a href="https://www.geeksforgeeks.org/bool-data-type-in-c/">qui</a>.</p>
 </blockquote>
+<h3><a class="header" href="#liste-o-array" id="liste-o-array">Liste (o array)</a></h3>
+<p>In quanto esseri umani, una delle cose fondamentali che facciamo continuamente è raggruppare insieme le intorno a noi che abbiano una qualche caratteristica in comune. Potrebbero essere un insieme di libri che si trovano sullo stesso scaffale, o tutta la frutta che abbiamo in casa, o gli articoli che si trovano nel magazzino. Questi insiemi sono rappresentati nei diversi linguaggi di programmazione in modo molto vario e con diversi nomi, ma quasi sempre sono un tipo base del linguaggio stesso.</p>
+<p>Nonostante le diversità, una caratteristica comune di tutti i linguaggi è che per definire e manipolare le liste si usano le parentesi quadre <code>[]</code>. Ad esempio, una lista di nomi si può definire come <code>names = [&quot;John&quot;,&quot;Mario&quot;,Akira&quot;]</code>, e per leggere un elemento di una lista si usa ad esempio <code>names[1]</code>.</p>
+<p>Attenzione: per convenzione, quasi tutti i linguaggi, inclusi C e Python, cominciano a contare da <code>0</code>, mentre noi nella vita quotidiana cominciamo da <code>1</code>. Nella pratica dell'informatica quindi, se una lista ha 3 elementi, il primo elemento della lista è l'elemento <code>0</code>, e l'ultimo è l'elemento <code>2</code>. Vedremo degli esempi in seguito.</p>
+<p>Una nota sulla nomenclatura: il tipo base di lista in C si chiama <em>array</em>, mentre in Python si chiama <em>list</em>. Tecnicamente tra liste e array ci sono delle differenze, ma quello che interessa a noi in questo momento è che in tutti i linguaggi esistono dei tipi base per rappresentare un insieme di oggetti con delle caratteristiche in comune.</p>
 <h2><a class="header" href="#approfondimento-tipi-statici-dinamici-deboli-e-forti" id="approfondimento-tipi-statici-dinamici-deboli-e-forti">Approfondimento: tipi statici, dinamici, deboli e forti</a></h2>
 <p>La caratteristica che probabilmente differenzia maggiormente i vari linguaggi di programmazione tra di loro, è come il linguaggio gestisce i tipi. Ci sono due assi su cui ci si può muovere:</p>
 <ul>
@@ -224,7 +237,7 @@
                         
 
                         
-                            <a rel="next" href="../01-base/02-python.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../01-base/01-types-classes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -242,7 +255,7 @@
                 
 
                 
-                    <a href="../01-base/02-python.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../01-base/01-types-classes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

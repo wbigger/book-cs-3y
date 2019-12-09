@@ -116,3 +116,16 @@ pip3 install <nome-libreria>
 ```
 
 Vediamo che `pip3` è un comando che gestisce i pacchetti Python (Pip sta per "Pip installs package", è un acronimo ricorsivo), e `<nome-libreria>` è il nome della libreria che vogliamo scaricare.
+
+## Riferimenti W3Schools
+
+Il sito w3schools è un buon riferimento per imparare il Python. Consigliamo in particolare le seguenti pagine:
+- [Tipi base](https://www.w3schools.com/python/python_datatypes.asp)
+- [Liste](https://www.w3schools.com/python/python_lists.asp)
+- [For loop](https://www.w3schools.com/python/python_for_loops.asp)
+- [Funzioni](https://www.w3schools.com/python/python_functions.asp)
+- [Classi](https://www.w3schools.com/python/python_classes.asp)
+
+A breve ci serviranno anche i seguenti concetti:
+- [JSON](https://www.w3schools.com/python/python_json.asp)
+- [PIP](https://www.w3schools.com/python/python_pip.asp)

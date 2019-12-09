@@ -14,8 +14,9 @@ I tipi fondamentali sono:
  - numeri decimali: per rappresentare qualcosa che ha un valore continuo e divisibile. Ad esempio il volume della musica, la temperatura della stanza.
  - caratteri: per rappresentare un singolo carattere, numero o in generale simbolo. Ad esempio i singoli caratteri che vediamo sulla tastiera: `i`, `7`, `€`, etc.
  - stringhe: per rappresentare una sequenza di caratteri. Ad esempio una stringa può essere una parola sullo schermo, o un'intera riga, o il titolo di un libro, etc.
- - liste: per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.
-- boolean: per cose che possono essere solo vere o false. Ad esempio se la luce è accesa o spenta.
+ - boolean: per cose che possono essere solo vere o false. Ad esempio se la luce è accesa o spenta.
+ - liste (o array): per rappresentare un insieme di cose. Ad esempio la lista di tutti i libri che si trovano nella libreria.
+ 
 
 
 Di seguito un approfondimento su alcuni tipi sopra descritti.
@@ -45,6 +46,14 @@ Per la rappresentazione dei caratteri bisogna fare più attenzione rispetto a qu
 - [ASCII](https://it.wikipedia.org/wiki/ASCII): rappresenta i caratteri inglesi (senza accenti o altri segni diacritici), i numeri e alcuni simboli base come `@`, `!`, `#` e simili. Usa un byte di memoria e viene utilizzato in casi particolari o in vecchi sistemi
 - [UTF-8](https://it.wikipedia.org/wiki/UTF-8: rappresenta i caratteri di tutte le lingue (italiano, spagnolo, cinese, indiano, sanscrito, greco antico, etc), i segni matematici, le emoji e tanti altri simboli. Usa un numero variabile di byte: per i caratteri più comuni (essenzialmente quelli ASCII) usa un solo byte, in tutti gli altri casi usa due byte. Alcuni esempi di caratteri UTF-8 sono:,`Ẽ`,`≢`,`©`,`∂`,`🌷`, etc.
 
+Nel linguaggio C, per rappresentare un singolo carattere si usa il singolo apice, ad esempio `'k'` è il singolo carattere `k`; per rappresentare le stringhe si usa il doppio apice, ad esempio `"hello"` è la stringa `hello`. In C l'espressione `'hello'` ritorna un errore.
+
+In Python, non si può rappresentare un singolo carattere, ma esistono solo stringhe. Per rappresentare le stringhe, si può usare sia indifferentemente sia il singolo che il doppio apice, quindi le espressioni `"hello"` ed `'hello'` sono equivalenti.
+
+> Come scegliere tra singolo e doppio apice? Dipende se all'interno della stringa che vogliamo rappresentare, ci sono degli apici. Se ci sono dei singoli apici all'interno, conviene usare i doppi apici per le stringhe, in modo che la stringa `"l'alba è meravigliosa"` sia valida. Se invece all'interno della stringa abbiamo doppi apici, conviene usare esternamente i singoli apici, in modo che ad esempio `'"Python" è bello'` sia una stringa valida. Se all'interno della nostra stringa ci sono sia singoli che doppi apici, dobbiamo usare il carattere di escape `\'` e `\"`; ad esempio possiamo scrivere `'l\'alba è "meravigliosa"` oppure `"l'alba è \"meravigliosa\"'. In caso di incertezza comunque, lo standard è utilizzare il singolo apice.
+
+> In Python esistono anche altri modi di rappresentare le stringhe, lo vedremo più avanti.
+
 ### Boolean
 Come abbiamo detto, un boolean rappresenta qualcosa che può essere o  solo vero o solo falso. Una variabile boolean può essere assegnata in uno dei seguenti modi:
 - direttamente a vero o falso, ad esempio `a = True`
@@ -53,6 +62,16 @@ Come abbiamo detto, un boolean rappresenta qualcosa che può essere o  solo vero
 Attenzione a non abusare del tipo boolean: usarlo solo quando concettualmente nel nostro mondo non possono esserci altri valori o valori intermedi. Ad esempio immaginiamo che nel nostro mondo ci sono sedie rosse e gialle. Mettere una variabile boolean del tipo `is_red`, che mi dice se la sedia è rossa, è una pessima idea. Primo perché non è chiaro cosa succede quando il valore è falso e secondo perché se domani arrivano delle sedie blu, devo cambiare tutto il codice :(
 
 > Uno dei punti su cui variano molto i diversi linguaggi è come e se convertire altri tipi in boolean. Ad esempio, posso considerare il valore `0` come falso, ed `1` come vero? Posso dire che una lista vuota è falsa, ed una lista non vuota è vera? Oppure che una stringa vuota è falsa, ed una stringa non vuota è vera? Questo in informatica viene detto "Truthy and Falsy" del linguaggio. Per sapere cosa è vero e falso in Python leggete [qui](https://docs.python.org/2.4/lib/truth.html), in C++ leggete [qui](https://www.geeksforgeeks.org/bool-data-type-in-c/).
+
+### Liste (o array)
+In quanto esseri umani, una delle cose fondamentali che facciamo continuamente è raggruppare insieme le intorno a noi che abbiano una qualche caratteristica in comune. Potrebbero essere un insieme di libri che si trovano sullo stesso scaffale, o tutta la frutta che abbiamo in casa, o gli articoli che si trovano nel magazzino. Questi insiemi sono rappresentati nei diversi linguaggi di programmazione in modo molto vario e con diversi nomi, ma quasi sempre sono un tipo base del linguaggio stesso.
+
+Nonostante le diversità, una caratteristica comune di tutti i linguaggi è che per definire e manipolare le liste si usano le parentesi quadre `[]`. Ad esempio, una lista di nomi si può definire come `names = ["John","Mario",Akira"]`, e per leggere un elemento di una lista si usa ad esempio `names[1]`.
+
+Attenzione: per convenzione, quasi tutti i linguaggi, inclusi C e Python, cominciano a contare da `0`, mentre noi nella vita quotidiana cominciamo da `1`. Nella pratica dell'informatica quindi, se una lista ha 3 elementi, il primo elemento della lista è l'elemento `0`, e l'ultimo è l'elemento `2`. Vedremo degli esempi in seguito.
+
+Una nota sulla nomenclatura: il tipo base di lista in C si chiama _array_, mentre in Python si chiama _list_. Tecnicamente tra liste e array ci sono delle differenze, ma quello che interessa a noi in questo momento è che in tutti i linguaggi esistono dei tipi base per rappresentare un insieme di oggetti con delle caratteristiche in comune.
+
 
 ## Approfondimento: tipi statici, dinamici, deboli e forti
 La caratteristica che probabilmente differenzia maggiormente i vari linguaggi di programmazione tra di loro, è come il linguaggio gestisce i tipi. Ci sono due assi su cui ci si può muovere:

@@ -69,9 +69,29 @@ La riga `@app.route("/")` è un'annotazione: sta ad indicare che la funzione suc
 
 La funzione `data_book()` viene quindi chiamata quando interroghiamo il web server. Questa funzione ritorna il nostro catalogo in formato JSON. È formata dalle seguenti parti:
 - `json.dumps()` è una funzione che converte il parametro che gli viene passato in formato JSON
-- `[book for book in catalogue]` è una sintassi tipica di Python, che crea una lista con all'interno tutti gli elementi di `catalogue`.
+- `[book for book in catalogue]` è una sintassi tipica di Python, che crea una nuova lista con all'interno tutti gli elementi di `catalogue`.
 
-> Attenzione: se book **non** fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo `Book` in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà `__dict__`, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe (come `__init__`). La riga precedente diventerebbe quindi `[book.__dict__ for book in catalogue]`.
+Nel dettaglio, stiamo dicendo che per ogni elemento `book` all'interno della lista `catalogue`, vogliamo creare un elemento con esattamente lo stesso valore di `book`.
+
+La precedente forma compatta è equivalente al seguente codice:
+
+```py
+mylist = []
+for book in catalogue:
+    mylist.append(book)
+```
+
+Come si può vedere, nella forma compatta non abbiamo bisogno di dichiarare la variabile di appoggio `mylist`.
+
+Attenzione: se book **non** fosse un tipo base ma un oggetto, questa sintassi non va bene, perché Python non saprebbe come convertire automaticamente un oggetto ti tipo `Book` in una stringa JSON. Per risolvere il problema, possiamo dire a Python che per trasformare l'oggetto in JSON deve associare ad ogni proprietà della classe Book una corrispondente proprietà nella stringa JSON. Per fare questo possiamo usare la proprietà `__dict__`, che come potete intuire dal doppio trattino basso all'inizio e alla fine, è una proprietà di sistema, assegnata automaticamente a tutti gli oggetti di una classe. La funzione precedente diventerebbe quindi:
+
+```py
+def data_book():
+    return json.dumps(
+        [book.__dict__ for book in catalogue]
+        )
+```
+
 
 
 ### Il formato JSON
