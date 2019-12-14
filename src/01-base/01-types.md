@@ -43,8 +43,8 @@ Nei processori a 64bit, la dimensione tipica dei numeri decimali è sempre 8 byt
 
 ### Caratteri e stringhe
 Per la rappresentazione dei caratteri bisogna fare più attenzione rispetto a quella degli interi perché esistono tanti standard diversi che co-esistono tra di loro. Semplificando, attualmente esistono due standard principali:
-- [ASCII](https://it.wikipedia.org/wiki/ASCII): rappresenta i caratteri inglesi (senza accenti o altri segni diacritici), i numeri e alcuni simboli base come `@`, `!`, `#` e simili. Usa un byte di memoria e viene utilizzato in casi particolari o in vecchi sistemi
-- [UTF-8](https://it.wikipedia.org/wiki/UTF-8: rappresenta i caratteri di tutte le lingue (italiano, spagnolo, cinese, indiano, sanscrito, greco antico, etc), i segni matematici, le emoji e tanti altri simboli. Usa un numero variabile di byte: per i caratteri più comuni (essenzialmente quelli ASCII) usa un solo byte, in tutti gli altri casi usa due byte. Alcuni esempi di caratteri UTF-8 sono:,`Ẽ`,`≢`,`©`,`∂`,`🌷`, etc.
+- [ASCII](https://it.wikipedia.org/wiki/ASCII): rappresenta i caratteri inglesi (senza accenti o altri segni diacritici), i numeri e alcuni simboli base come `@`, `!`, `#`,`5` e simili. Usa un byte di memoria e viene utilizzato in casi particolari o in vecchi sistemi
+- [UTF-8](https://it.wikipedia.org/wiki/UTF-8): rappresenta i caratteri di tutte le lingue (italiano, spagnolo, cinese, indiano, sanscrito, greco antico, etc), i segni matematici, le emoji e tanti altri simboli. Usa un numero variabile di byte: per i caratteri più comuni (essenzialmente quelli ASCII) usa un solo byte, in tutti gli altri casi usa due byte. Alcuni esempi di caratteri UTF-8 sono:,`Ẽ`,`≢`,`©`,`∂`,`🌷`, etc.
 
 Nel linguaggio C, per rappresentare un singolo carattere si usa il singolo apice, ad esempio `'k'` è il singolo carattere `k`; per rappresentare le stringhe si usa il doppio apice, ad esempio `"hello"` è la stringa `hello`. In C l'espressione `'hello'` ritorna un errore.
 
