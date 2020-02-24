@@ -2,8 +2,10 @@
 
 - [Benvenuti](./README.md)
 - [Concetti base](./01-base/README.md)
-- [Tipi](./01-base/01-types.md)
+    - [Tipi](./01-base/01-types.md)
     - [Classi](./01-base/01-types-classes.md)
-- [Python](./01-base/02-python.md)
+    - [Python](./01-base/02-python.md)
     - [Installazione di Python](./01-base/02-1-python-install.md)
-- [Web App](./01-base/03-webapp.md)
+    - [Web app](./01-base/03-webapp.md)
+- [Ordinamento](./02-sorting/README.md)
+    - [Complessità](./02-sorting/complexity.md)

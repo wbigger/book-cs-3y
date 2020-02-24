@@ -55,9 +55,12 @@ In Python, non si può rappresentare un singolo carattere, ma esistono solo stri
 > In Python esistono anche altri modi di rappresentare le stringhe, lo vedremo più avanti.
 
 ### Boolean
+
 Come abbiamo detto, un boolean rappresenta qualcosa che può essere o  solo vero o solo falso. Una variabile boolean può essere assegnata in uno dei seguenti modi:
 - direttamente a vero o falso, ad esempio `a = True`
 - come risultato di una operazione logica, ad esempio `a = 3 > 2`
+
+> TODO: inserire foto di Boole
 
 Attenzione a non abusare del tipo boolean: usarlo solo quando concettualmente nel nostro mondo non possono esserci altri valori o valori intermedi. Ad esempio immaginiamo che nel nostro mondo ci sono sedie rosse e gialle. Mettere una variabile boolean del tipo `is_red`, che mi dice se la sedia è rossa, è una pessima idea. Primo perché non è chiaro cosa succede quando il valore è falso e secondo perché se domani arrivano delle sedie blu, devo cambiare tutto il codice :(
 
