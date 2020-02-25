@@ -6,6 +6,9 @@ La maggior parte di questi gruppi è _ordinato_, ovvero tutti gli elementi all'i
 
 Non stupisce quindi che l'operazione di ordinamento è di estrema importanza nel mondo dell'informatica, e l'ottimizzazione fino all'ultimo bit o microsecondo è stato oggetti di profondi studi ed è ancora un ambito di studi in continua evoluzione.
 
+## Ordinamento ed osservazione del mondo che ci circonda
+Come molto spesso accade, la maggior parte degli algoritmi che vedremo prendono spunto dall'osservazione di come si comportano gli esseri umani quando gli viene chiesto di ordinare qualcosa o dall'osservazione di fenomeni naturali. Personalmente consiglio questo modo di procedere: non rimanere chiusi in una stanza davanti ad un monitor ma uscire fuori, osservare gli altri, la natura, il mondo che ci circonda. Gli inglesi dicono _get out of the building_. Funziona.
+
 ## Google e i motori di ricerca
 
 <p class="centered">

@@ -1,7 +1,9 @@
 # Selection sort: miglioramenti
 
+Riprendiamo la nostra implementazione del selection sort finora, cercando di approfondire alcuni aspetti ed apportare delle migliorie.
+
 ## Ordinamento sul posto
-Riprendiamo la nostra implementazione del selection sort finora.
+Eravamo arrivati a questo punto:
 
 ```py
 my_list = [7, 12, 18, 5, 6]
@@ -11,9 +13,9 @@ for _ in range(len(my_list)):
     my_list.remove(min_val)
 ```
 
-Per ordinare la lista, abbiamo creato una nuova lista di appoggio `sorted_list`. Se l'array è molto grande questo potrebbe essere un problema. 
+Per ordinare la lista, abbiamo creato una nuova lista di appoggio `sorted_list`. Se l'array è molto grande questo potrebbe essere un problema.
 
-Possiamo risolvere questo problema spostando direttamente gli elementi dell'array di partenza, senza nessun array ausiliario: questo tipo di ordinamento che modifica direttamente l'array in input si chiama ordinamento __sul posto__ (in inglese _in place_).
+In effetti, pensandoci, quando abbiamo ordinato il mazzo di carte non abbiamo creato una copia del mazzo, ma abbiamo spostato la posizione delle carte in modo che il mazzo di partenza fosse ordinato. Questo tipo di ordinamento che modifica direttamente l'array in input si chiama ordinamento __sul posto__ (in inglese _in place_).
 
 Non ripeteremo qui la soluzione originale che abbiamo svolto in laboratorio, potete trovare tutto il codice [qui](https://gist.github.com/wbigger/dca17d4c1b2718897cfa6cb53631316f#file-sorting-selection-py).
 
@@ -64,3 +66,20 @@ Per la complessità temporale consideriamo solo il primo termine, e quindi otten
 <p class="centered">
 complessità temporale = O(n<sup>2</sup>)
 </p>
+
+## Caso migliore, peggiore e medio
+La complessità di un algoritmo di ordinamento potrebbe dipendere da alcuni fattori, come ad esempio se gli elementi della lista sono già ordinati, se sono _quasi_ ordinati (cioé la maggior parte degli elementi sono ordinati e solo qualcuno è fuori posto), o completamente casuali.
+
+Si distinguono quindi tre casi di complessità:
+- caso migliore: il minimo valore possibile di complessità
+- caso peggiore: il massimo valore possibile di complessità
+- caso medio: un valore che mediamente assume la complessità
+
+Per l'algoritmo di selection sort, il calcolo della complessità temporale non dipende da come è fatta al suo interno la lista: in ogni caso ci fa sempre lo stesso numero di operazioni. Quindi possiamo affermare quanto segue.
+
+
+| Selection sort | complessità temporale |
+|-------------|:-----:|
+| caso migliore | O(n<sup>2</sup>) |
+| caso peggiore | O(n<sup>2</sup>) |
+| caso medio | O(n<sup>2</sup>) |

@@ -18,8 +18,6 @@ https://github.com/wbigger/2019-20-3Binf-sorting-benchmark
 
 Diagramma stack-heap,puntatori, ordinamento tramite puntatori invece di spostare blocchi di memoria.
 
-Hungarian quick sort
-https://www.youtube.com/watch?v=ywWBy6J5gz8
 
 Paragone con la biblioteca: se voglio ordinare i libri, invece di spostare i libri, sposto i cartoncini, così posso anche avere più liste ordinate con gli stessi elementi!
 

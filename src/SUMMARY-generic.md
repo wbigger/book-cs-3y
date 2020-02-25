@@ -10,4 +10,7 @@
 - [Ordinamento](./02-sorting/00-README.md)
     - [Un primo algoritmo](./02-sorting/01-selection-sort.md)
     - [Complessità](./02-sorting/02-complexity.md)
-    - [Selection sort rivisitato](./02-sorting/03-selection-sort.md)
+    - [Selection sort: miglioramenti](./02-sorting/03-selection-sort.md)
+    - [Bubble sort](./02-sorting/04-bubble-sort.md)
+    - [Quick sort](./02-sorting/05-quick-sort.md)
+    - [Gestione della memoria](./02-sorting/06-memory-management.md)
