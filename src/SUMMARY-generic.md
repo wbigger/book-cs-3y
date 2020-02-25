@@ -7,5 +7,6 @@
     - [Python](./01-base/02-python.md)
     - [Installazione di Python](./01-base/02-1-python-install.md)
     - [Web app](./01-base/03-webapp.md)
-- [Ordinamento](./02-sorting/README.md)
-    - [Complessità](./02-sorting/complexity.md)
+- [Ordinamento](./02-sorting/00-README.md)
+    - [Un primo algoritmo](./02-sorting/01-selection-sort.md)
+    - [Complessità](./02-sorting/02-complexity.md)
