@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Installazione di Python - Course Template</title>
+        <title>Selection sort: miglioramenti - Course Template</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">2.2.</strong> Classi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">2.3.</strong> Python</a></li><li class="expanded "><a href="../01-base/02-1-python-install.html" class="active"><strong aria-hidden="true">2.4.</strong> Installazione di Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">2.5.</strong> Web app</a></li></ol></li><li class="expanded "><a href="../02-sorting/00-README.html"><strong aria-hidden="true">3.</strong> Ordinamento</a></li><li><ol class="section"><li class="expanded "><a href="../02-sorting/01-selection-sort.html"><strong aria-hidden="true">3.1.</strong> Un primo algoritmo</a></li><li class="expanded "><a href="../02-sorting/02-complexity.html"><strong aria-hidden="true">3.2.</strong> Complessità</a></li><li class="expanded "><a href="../02-sorting/03-selection-sort.html"><strong aria-hidden="true">3.3.</strong> Selection sort: miglioramenti</a></li><li class="expanded "><a href="../02-sorting/04-bubble-sort.html"><strong aria-hidden="true">3.4.</strong> Bubble sort</a></li><li class="expanded "><a href="../02-sorting/05-quick-sort.html"><strong aria-hidden="true">3.5.</strong> Quick sort</a></li><li class="expanded "><a href="../02-sorting/06-memory-management.html"><strong aria-hidden="true">3.6.</strong> Gestione della memoria</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">2.2.</strong> Classi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">2.3.</strong> Python</a></li><li class="expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">2.4.</strong> Installazione di Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">2.5.</strong> Web app</a></li></ol></li><li class="expanded "><a href="../02-sorting/00-README.html"><strong aria-hidden="true">3.</strong> Ordinamento</a></li><li><ol class="section"><li class="expanded "><a href="../02-sorting/01-selection-sort.html"><strong aria-hidden="true">3.1.</strong> Un primo algoritmo</a></li><li class="expanded "><a href="../02-sorting/02-complexity.html"><strong aria-hidden="true">3.2.</strong> Complessità</a></li><li class="expanded "><a href="../02-sorting/03-selection-sort.html" class="active"><strong aria-hidden="true">3.3.</strong> Selection sort: miglioramenti</a></li><li class="expanded "><a href="../02-sorting/04-bubble-sort.html"><strong aria-hidden="true">3.4.</strong> Bubble sort</a></li><li class="expanded "><a href="../02-sorting/05-quick-sort.html"><strong aria-hidden="true">3.5.</strong> Quick sort</a></li><li class="expanded "><a href="../02-sorting/06-memory-management.html"><strong aria-hidden="true">3.6.</strong> Gestione della memoria</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,38 +154,87 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#installare-python" id="installare-python">Installare Python</a></h1>
-<p>Per installare Python su Visual Studio Code, <a href="https://code.visualstudio.com/docs/python/python-tutorial">questa</a> è la guida ufficiale. Riepiloghiamo in breve qui i passaggi.</p>
-<h2><a class="header" href="#installare-python-sul-proprio-computer" id="installare-python-sul-proprio-computer">Installare Python sul proprio computer</a></h2>
-<p>Andare sul sito <a href="https://www.python.org/downloads/">Python downloads</a> e scaricare l'ultima versione di Python premendo il bottoncione giallo grande con scritto &quot;Download Python&quot;.</p>
-<p>Quando lo avviate, vedrete una schermata di questo genere (la versione di Python potrebbe cambiare):</p>
-<p class="img-container centered">
-<img class="w80p" src="assets/python-install.png" alt="Install Python">
+                        <h1><a class="header" href="#selection-sort-miglioramenti" id="selection-sort-miglioramenti">Selection sort: miglioramenti</a></h1>
+<p>Riprendiamo la nostra implementazione del selection sort finora, cercando di approfondire alcuni aspetti ed apportare delle migliorie.</p>
+<h2><a class="header" href="#ordinamento-sul-posto" id="ordinamento-sul-posto">Ordinamento sul posto</a></h2>
+<p>Eravamo arrivati a questo punto:</p>
+<pre><code class="language-py">my_list = [7, 12, 18, 5, 6]
+for _ in range(len(my_list)):
+    min_val = min(my_list)
+    sorted_list.append(min_val)
+    my_list.remove(min_val)
+</code></pre>
+<p>Per ordinare la lista, abbiamo creato una nuova lista di appoggio <code>sorted_list</code>. Se l'array è molto grande questo potrebbe essere un problema.</p>
+<p>In effetti, pensandoci, quando abbiamo ordinato il mazzo di carte non abbiamo creato una copia del mazzo, ma abbiamo spostato la posizione delle carte in modo che il mazzo di partenza fosse ordinato. Questo tipo di ordinamento che modifica direttamente l'array in input si chiama ordinamento <strong>sul posto</strong> (in inglese <em>in place</em>).</p>
+<p>Non ripeteremo qui la soluzione originale che abbiamo svolto in laboratorio, potete trovare tutto il codice <a href="https://gist.github.com/wbigger/dca17d4c1b2718897cfa6cb53631316f#file-sorting-selection-py">qui</a>.</p>
+<h2><a class="header" href="#calcolo-della-complessità-temporale" id="calcolo-della-complessità-temporale">Calcolo della complessità temporale</a></h2>
+<p>Cerchiamo di calcolare perché questo algoritmo impiega un <em>O(n<sup>2</sup>)</em> operazioni per ordinare l'array.</p>
+<p>Analizziamo il codice, ricordando che <code>len(my_list)</code> è il numero di elementi della lista e quindi esattamente il nostro <em>n</em>.</p>
+<pre><code class="language-py"># Qui c'è un for: le operazioni al suo interno 
+# vengono ripetute per n volte
+for _ in range(len(my_list)):
+    # per trovare il minimo, bisogna scorrere tutta
+    # la lista, quindi servono circa n operazioni
+    min_val = min(my_list)
+    # append è un'operazione singola
+    sorted_list.append(min_val)
+    # remove può essere considerata come un'operazione singola
+    my_list.remove(min_val)
+</code></pre>
+<p>Quindi, il numero di operazioni è:</p>
+<ul>
+<li>n operazioni per min</li>
+<li>1 operazione per append</li>
+<li>1 operazione per remove</li>
+<li>il tutto ripetuto per n volte</li>
+</ul>
+<p>Mettiamo insieme le cose e abbiamo:</p>
+<p class="centered">
+complessità temporale = (n+1+1)*n = (n+2)*n = n<sup>2</sup>+2*n
 </p>
-<p>Attenzione: selezionate l'ultima spunta in basso &quot;Add Python to PATH&quot; per poter usare i comandi Python anche da terminale.</p>
-<p>Seguite le istruzioni fino in fondo, e se necessario riavviate Visual Studio Code.</p>
-<h2><a class="header" href="#visual-studio-code" id="visual-studio-code">Visual Studio Code</a></h2>
-<p>Aprite Visual Studio Code ed installate l'estensione <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python di Microsoft</a>. </p>
-<p class="img-container centered">
-<img class="w80p" src="assets/python-extension.png" alt="Install Python extension">
+<p>OK, ci siamo quasi. La nostra complessità ha due addendi: </p>
+<ul>
+<li>n<sup>2</sup></li>
+<li>2*n</li>
+</ul>
+<p>Quando n diventa molto grande, il primo termine cresce molto di più del secondo, e quindi il secondo si può trascurare.</p>
+<p>Per dimostrazione, facciamo una prova ad esempio con <code>n = 1000</code>: </p>
+<ul>
+<li>n<sup>2</sup> = 1000<sup>2</sup> = 1 milione</li>
+<li>2*n = 2000</li>
+</ul>
+<p>Considerando che stiamo facendo dei calcoli approssimati, possiamo tranquillamente trascurare 2000 rispetto ad un milione!</p>
+<p>Per la complessità temporale consideriamo solo il primo termine, e quindi otteniamo:</p>
+<p class="centered">
+complessità temporale = O(n<sup>2</sup>)
 </p>
-<p>Una volta installata, quando aprirete un file con estensione <code>.py</code> vi comparirà nella barra blu in basso la possibilità di selezionare l'interprete Python. Selezionate l'ultima versione che avete appena installato.</p>
-<p class="img-container centered">
-<img class="w50p" src="assets/python-select-env.png" alt="Select Python Interpreter">
-</p>
+<h2><a class="header" href="#caso-migliore-peggiore-e-medio" id="caso-migliore-peggiore-e-medio">Caso migliore, peggiore e medio</a></h2>
+<p>La complessità di un algoritmo di ordinamento potrebbe dipendere da alcuni fattori, come ad esempio se gli elementi della lista sono già ordinati, se sono <em>quasi</em> ordinati (cioé la maggior parte degli elementi sono ordinati e solo qualcuno è fuori posto), o completamente casuali.</p>
+<p>Si distinguono quindi tre casi di complessità:</p>
+<ul>
+<li>caso migliore: il minimo valore possibile di complessità</li>
+<li>caso peggiore: il massimo valore possibile di complessità</li>
+<li>caso medio: un valore che mediamente assume la complessità</li>
+</ul>
+<p>Per l'algoritmo di selection sort, il calcolo della complessità temporale non dipende da come è fatta al suo interno la lista: in ogni caso ci fa sempre lo stesso numero di operazioni. Quindi possiamo affermare quanto segue.</p>
+<table><thead><tr><th>Selection sort</th><th align="center">complessità temporale</th></tr></thead><tbody>
+<tr><td>caso migliore</td><td align="center">O(n<sup>2</sup>)</td></tr>
+<tr><td>caso peggiore</td><td align="center">O(n<sup>2</sup>)</td></tr>
+<tr><td>caso medio</td><td align="center">O(n<sup>2</sup>)</td></tr>
+</tbody></table>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../01-base/02-python.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../02-sorting/02-complexity.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../01-base/03-webapp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../02-sorting/04-bubble-sort.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -197,13 +246,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../01-base/02-python.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../02-sorting/02-complexity.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../01-base/03-webapp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../02-sorting/04-bubble-sort.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

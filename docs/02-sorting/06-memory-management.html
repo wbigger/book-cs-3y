@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Installazione di Python - Course Template</title>
+        <title>Gestione della memoria - Course Template</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">2.2.</strong> Classi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">2.3.</strong> Python</a></li><li class="expanded "><a href="../01-base/02-1-python-install.html" class="active"><strong aria-hidden="true">2.4.</strong> Installazione di Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">2.5.</strong> Web app</a></li></ol></li><li class="expanded "><a href="../02-sorting/00-README.html"><strong aria-hidden="true">3.</strong> Ordinamento</a></li><li><ol class="section"><li class="expanded "><a href="../02-sorting/01-selection-sort.html"><strong aria-hidden="true">3.1.</strong> Un primo algoritmo</a></li><li class="expanded "><a href="../02-sorting/02-complexity.html"><strong aria-hidden="true">3.2.</strong> Complessità</a></li><li class="expanded "><a href="../02-sorting/03-selection-sort.html"><strong aria-hidden="true">3.3.</strong> Selection sort: miglioramenti</a></li><li class="expanded "><a href="../02-sorting/04-bubble-sort.html"><strong aria-hidden="true">3.4.</strong> Bubble sort</a></li><li class="expanded "><a href="../02-sorting/05-quick-sort.html"><strong aria-hidden="true">3.5.</strong> Quick sort</a></li><li class="expanded "><a href="../02-sorting/06-memory-management.html"><strong aria-hidden="true">3.6.</strong> Gestione della memoria</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">2.2.</strong> Classi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">2.3.</strong> Python</a></li><li class="expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">2.4.</strong> Installazione di Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">2.5.</strong> Web app</a></li></ol></li><li class="expanded "><a href="../02-sorting/00-README.html"><strong aria-hidden="true">3.</strong> Ordinamento</a></li><li><ol class="section"><li class="expanded "><a href="../02-sorting/01-selection-sort.html"><strong aria-hidden="true">3.1.</strong> Un primo algoritmo</a></li><li class="expanded "><a href="../02-sorting/02-complexity.html"><strong aria-hidden="true">3.2.</strong> Complessità</a></li><li class="expanded "><a href="../02-sorting/03-selection-sort.html"><strong aria-hidden="true">3.3.</strong> Selection sort: miglioramenti</a></li><li class="expanded "><a href="../02-sorting/04-bubble-sort.html"><strong aria-hidden="true">3.4.</strong> Bubble sort</a></li><li class="expanded "><a href="../02-sorting/05-quick-sort.html"><strong aria-hidden="true">3.5.</strong> Quick sort</a></li><li class="expanded "><a href="../02-sorting/06-memory-management.html" class="active"><strong aria-hidden="true">3.6.</strong> Gestione della memoria</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,40 +154,18 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#installare-python" id="installare-python">Installare Python</a></h1>
-<p>Per installare Python su Visual Studio Code, <a href="https://code.visualstudio.com/docs/python/python-tutorial">questa</a> è la guida ufficiale. Riepiloghiamo in breve qui i passaggi.</p>
-<h2><a class="header" href="#installare-python-sul-proprio-computer" id="installare-python-sul-proprio-computer">Installare Python sul proprio computer</a></h2>
-<p>Andare sul sito <a href="https://www.python.org/downloads/">Python downloads</a> e scaricare l'ultima versione di Python premendo il bottoncione giallo grande con scritto &quot;Download Python&quot;.</p>
-<p>Quando lo avviate, vedrete una schermata di questo genere (la versione di Python potrebbe cambiare):</p>
-<p class="img-container centered">
-<img class="w80p" src="assets/python-install.png" alt="Install Python">
-</p>
-<p>Attenzione: selezionate l'ultima spunta in basso &quot;Add Python to PATH&quot; per poter usare i comandi Python anche da terminale.</p>
-<p>Seguite le istruzioni fino in fondo, e se necessario riavviate Visual Studio Code.</p>
-<h2><a class="header" href="#visual-studio-code" id="visual-studio-code">Visual Studio Code</a></h2>
-<p>Aprite Visual Studio Code ed installate l'estensione <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python di Microsoft</a>. </p>
-<p class="img-container centered">
-<img class="w80p" src="assets/python-extension.png" alt="Install Python extension">
-</p>
-<p>Una volta installata, quando aprirete un file con estensione <code>.py</code> vi comparirà nella barra blu in basso la possibilità di selezionare l'interprete Python. Selezionate l'ultima versione che avete appena installato.</p>
-<p class="img-container centered">
-<img class="w50p" src="assets/python-select-env.png" alt="Select Python Interpreter">
-</p>
+                        <h1><a class="header" href="#gestione-della-memoria" id="gestione-della-memoria">Gestione della memoria</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../01-base/02-python.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../02-sorting/05-quick-sort.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../01-base/03-webapp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -197,15 +175,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../01-base/02-python.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../02-sorting/05-quick-sort.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a href="../01-base/03-webapp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 

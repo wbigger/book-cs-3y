@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Installazione di Python - Course Template</title>
+        <title>Bubble sort - Course Template</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">2.2.</strong> Classi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">2.3.</strong> Python</a></li><li class="expanded "><a href="../01-base/02-1-python-install.html" class="active"><strong aria-hidden="true">2.4.</strong> Installazione di Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">2.5.</strong> Web app</a></li></ol></li><li class="expanded "><a href="../02-sorting/00-README.html"><strong aria-hidden="true">3.</strong> Ordinamento</a></li><li><ol class="section"><li class="expanded "><a href="../02-sorting/01-selection-sort.html"><strong aria-hidden="true">3.1.</strong> Un primo algoritmo</a></li><li class="expanded "><a href="../02-sorting/02-complexity.html"><strong aria-hidden="true">3.2.</strong> Complessità</a></li><li class="expanded "><a href="../02-sorting/03-selection-sort.html"><strong aria-hidden="true">3.3.</strong> Selection sort: miglioramenti</a></li><li class="expanded "><a href="../02-sorting/04-bubble-sort.html"><strong aria-hidden="true">3.4.</strong> Bubble sort</a></li><li class="expanded "><a href="../02-sorting/05-quick-sort.html"><strong aria-hidden="true">3.5.</strong> Quick sort</a></li><li class="expanded "><a href="../02-sorting/06-memory-management.html"><strong aria-hidden="true">3.6.</strong> Gestione della memoria</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">2.2.</strong> Classi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">2.3.</strong> Python</a></li><li class="expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">2.4.</strong> Installazione di Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">2.5.</strong> Web app</a></li></ol></li><li class="expanded "><a href="../02-sorting/00-README.html"><strong aria-hidden="true">3.</strong> Ordinamento</a></li><li><ol class="section"><li class="expanded "><a href="../02-sorting/01-selection-sort.html"><strong aria-hidden="true">3.1.</strong> Un primo algoritmo</a></li><li class="expanded "><a href="../02-sorting/02-complexity.html"><strong aria-hidden="true">3.2.</strong> Complessità</a></li><li class="expanded "><a href="../02-sorting/03-selection-sort.html"><strong aria-hidden="true">3.3.</strong> Selection sort: miglioramenti</a></li><li class="expanded "><a href="../02-sorting/04-bubble-sort.html" class="active"><strong aria-hidden="true">3.4.</strong> Bubble sort</a></li><li class="expanded "><a href="../02-sorting/05-quick-sort.html"><strong aria-hidden="true">3.5.</strong> Quick sort</a></li><li class="expanded "><a href="../02-sorting/06-memory-management.html"><strong aria-hidden="true">3.6.</strong> Gestione della memoria</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,38 +154,84 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#installare-python" id="installare-python">Installare Python</a></h1>
-<p>Per installare Python su Visual Studio Code, <a href="https://code.visualstudio.com/docs/python/python-tutorial">questa</a> è la guida ufficiale. Riepiloghiamo in breve qui i passaggi.</p>
-<h2><a class="header" href="#installare-python-sul-proprio-computer" id="installare-python-sul-proprio-computer">Installare Python sul proprio computer</a></h2>
-<p>Andare sul sito <a href="https://www.python.org/downloads/">Python downloads</a> e scaricare l'ultima versione di Python premendo il bottoncione giallo grande con scritto &quot;Download Python&quot;.</p>
-<p>Quando lo avviate, vedrete una schermata di questo genere (la versione di Python potrebbe cambiare):</p>
-<p class="img-container centered">
-<img class="w80p" src="assets/python-install.png" alt="Install Python">
+                        <h1><a class="header" href="#bubble-sort" id="bubble-sort">Bubble sort</a></h1>
+<p>Un altro algoritmo di ordinamento molto semplice che vedremo ora è il <em>bubble sort</em> (ordinamento a bolla).</p>
+<p class="centered">
+<img class="right_side w35p" src="assets/bubbles.jpg" alt="Bubbles" title="Bubbles">
 </p>
-<p>Attenzione: selezionate l'ultima spunta in basso &quot;Add Python to PATH&quot; per poter usare i comandi Python anche da terminale.</p>
-<p>Seguite le istruzioni fino in fondo, e se necessario riavviate Visual Studio Code.</p>
-<h2><a class="header" href="#visual-studio-code" id="visual-studio-code">Visual Studio Code</a></h2>
-<p>Aprite Visual Studio Code ed installate l'estensione <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python di Microsoft</a>. </p>
-<p class="img-container centered">
-<img class="w80p" src="assets/python-extension.png" alt="Install Python extension">
+<p>Immaginiamo che la nostra lista da ordinare sia come un oceano, in cui il primo elemento corrisponde al fondo del mare e l'ultimo elemento sia la superficie. Immaginiamo anche che gli elementi più grandi siano i più più leggeri (meno densi), e che tendano ad andare come delle bolle verso la superficie.</p>
+<p>Con questa immagine in mente, vediamo cosa dobbiamo:</p>
+<ul>
+<li>prendere il primo elemento della lista</li>
+<li>confrontarlo con tutti i successivi</li>
+<li>se il primo elemento è maggiore di uno sopra di lui, scambiare i due elementi fra loro, in modo da far &quot;risalire&quot; verso la superficie l'elemento</li>
+<li>quando ho finito con il primo elemento, ripetere l'operazione per tutti gli altri elementi della lista</li>
+</ul>
+<p>Vediamo una prima implementazione di questa procedura.</p>
+<pre><code class="language-py">my_list = [7, 12, 18, 5, 6]
+# scorro tutta la lista, partendo dal primo elemento
+for index in range(len(my_list)):
+        # per ogni elemento della lista da index fino alla fine
+        for jdex in range(index, len(my_list)):
+            # se l'elemento in index è maggiore di quello in jdex, li scambio
+            if (my_list[index] &gt; my_list[jdex]):
+                my_list[index], my_list[jdex] = my_list[jdex], my_list[index]
+
+print(my_list)
+</code></pre>
+<p><a href="https://repl.it/@ClaudioCapobian/bubble-sort-simple"><small>Versione online intereattiva</small></a></p>
+<p>Bene! Come potete vedere dalla versione online interattiva, questa versione funziona.</p>
+<h2><a class="header" href="#miglioramenti" id="miglioramenti">Miglioramenti</a></h2>
+<p>Vediamo se riusciamo a migliorare l'algoritmo.</p>
+<p>Possiamo osservare che, se quando prendiamo in esame un elemento e lo confrontiamo con tutti quelli sopra di lui, non c'è nessun elemento da scambiare, vuol dire che gli elementi sono già tutti quanti in ordine.</p>
+<p>Con questa osservazione modifichiamo l'algoritmo in questo modo.</p>
+<pre><code class="language-py">for index in range(len(my_list)):
+        # inizializziamo la variabile booleana di controllo &quot;swapped&quot; a False
+        swapped = False
+        for jdex in range(index, len(my_list)):
+            if (my_list[index] &gt; my_list[jdex]):
+                my_list[index], my_list[jdex] = my_list[jdex], my_list[index]
+                # se c'è anche un solo scambio, impostare la variabile di controllo a True
+                swapped = True
+        # solo se la variabile di controllo è rimasta False (quindi non c'è stato nessuno scambio), esco dal ciclo perché la lista è già ordinata
+        if not swapped:
+            break
+</code></pre>
+<p><a href="https://repl.it/@ClaudioCapobian/bubble-sort-2"><small>Versione online intereattiva</small></a></p>
+<h2><a class="header" href="#calcolo-della-complessità" id="calcolo-della-complessità">Calcolo della complessità</a></h2>
+<p>Proviamo a calcolare la complessità per il bubble sort.</p>
+<h3><a class="header" href="#caso-medio-e-peggiore" id="caso-medio-e-peggiore">Caso medio e peggiore</a></h3>
+<p>Nel caso medio, abbiamo i seguenti passaggi:</p>
+<ul>
+<li>il ciclo esterno (indice <code>index</code>) viene ripetuto n volte</li>
+<li>per ogni iterazione del ciclo esterno, il ciclo interno (indice <code>jdex</code>) esegue n operazioni</li>
+</ul>
+<p>Quindi nel caso medio:</p>
+<p class="centered">
+complessità temporale caso medio = O(n*n) = O(n<sup>2</sup>)
 </p>
-<p>Una volta installata, quando aprirete un file con estensione <code>.py</code> vi comparirà nella barra blu in basso la possibilità di selezionare l'interprete Python. Selezionate l'ultima versione che avete appena installato.</p>
-<p class="img-container centered">
-<img class="w50p" src="assets/python-select-env.png" alt="Select Python Interpreter">
+<p>Questo caso corrisponde anche al caso peggiore, in quanto l'algoritmo non può fare più operazioni di così.</p>
+<h3><a class="header" href="#caso-migliore" id="caso-migliore">Caso migliore</a></h3>
+<p>Nel caso in cui la lista sia già ordinata, l'algoritmo se ne accorge con la variabile booleana di guardia &quot;swapped&quot;.</p>
+<p>In questo caso il ciclo interno (indice <code>jdex</code>) esegue n operazioni, mentre il ciclo esterno uscirebbe dopo la prima iterazione.</p>
+<p>Quindi in questo caso:</p>
+<p class="centered">
+complessità temporale caso migliore = O(n*1) = O(n)
 </p>
+<p>Abbiamo trovato che il caso migliore per il bubble sort è O(n) e si ha quando la lista di partenza è già ordinata.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../01-base/02-python.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../02-sorting/03-selection-sort.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../01-base/03-webapp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../02-sorting/05-quick-sort.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -197,13 +243,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../01-base/02-python.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../02-sorting/03-selection-sort.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../01-base/03-webapp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../02-sorting/05-quick-sort.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

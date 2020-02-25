@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li class="expanded "><a href="01-base/01-types.html"><strong aria-hidden="true">3.</strong> Tipi</a></li><li><ol class="section"><li class="expanded "><a href="01-base/01-types-classes.html"><strong aria-hidden="true">3.1.</strong> Classi</a></li></ol></li><li class="expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">4.</strong> Python</a></li><li><ol class="section"><li class="expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">4.1.</strong> Installazione di Python</a></li></ol></li><li class="expanded "><a href="01-base/03-webapp.html"><strong aria-hidden="true">5.</strong> Web App</a></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li><ol class="section"><li class="expanded "><a href="01-base/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="expanded "><a href="01-base/01-types-classes.html"><strong aria-hidden="true">2.2.</strong> Classi</a></li><li class="expanded "><a href="01-base/02-python.html"><strong aria-hidden="true">2.3.</strong> Python</a></li><li class="expanded "><a href="01-base/02-1-python-install.html"><strong aria-hidden="true">2.4.</strong> Installazione di Python</a></li><li class="expanded "><a href="01-base/03-webapp.html"><strong aria-hidden="true">2.5.</strong> Web app</a></li></ol></li><li class="expanded "><a href="02-sorting/00-README.html"><strong aria-hidden="true">3.</strong> Ordinamento</a></li><li><ol class="section"><li class="expanded "><a href="02-sorting/01-selection-sort.html"><strong aria-hidden="true">3.1.</strong> Un primo algoritmo</a></li><li class="expanded "><a href="02-sorting/02-complexity.html"><strong aria-hidden="true">3.2.</strong> Complessità</a></li><li class="expanded "><a href="02-sorting/03-selection-sort.html"><strong aria-hidden="true">3.3.</strong> Selection sort: miglioramenti</a></li><li class="expanded "><a href="02-sorting/04-bubble-sort.html"><strong aria-hidden="true">3.4.</strong> Bubble sort</a></li><li class="expanded "><a href="02-sorting/05-quick-sort.html"><strong aria-hidden="true">3.5.</strong> Quick sort</a></li><li class="expanded "><a href="02-sorting/06-memory-management.html"><strong aria-hidden="true">3.6.</strong> Gestione della memoria</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -239,6 +239,9 @@ sapere indispensabile per chi vuole diventare un informatico.</p>
 <li>direttamente a vero o falso, ad esempio <code>a = True</code></li>
 <li>come risultato di una operazione logica, ad esempio <code>a = 3 &gt; 2</code></li>
 </ul>
+<blockquote>
+<p>TODO: inserire foto di Boole</p>
+</blockquote>
 <p>Attenzione a non abusare del tipo boolean: usarlo solo quando concettualmente nel nostro mondo non possono esserci altri valori o valori intermedi. Ad esempio immaginiamo che nel nostro mondo ci sono sedie rosse e gialle. Mettere una variabile boolean del tipo <code>is_red</code>, che mi dice se la sedia è rossa, è una pessima idea. Primo perché non è chiaro cosa succede quando il valore è falso e secondo perché se domani arrivano delle sedie blu, devo cambiare tutto il codice :(</p>
 <blockquote>
 <p>Uno dei punti su cui variano molto i diversi linguaggi è come e se convertire altri tipi in boolean. Ad esempio, posso considerare il valore <code>0</code> come falso, ed <code>1</code> come vero? Posso dire che una lista vuota è falsa, ed una lista non vuota è vera? Oppure che una stringa vuota è falsa, ed una stringa non vuota è vera? Questo in informatica viene detto &quot;Truthy and Falsy&quot; del linguaggio. Per sapere cosa è vero e falso in Python leggete <a href="https://docs.python.org/2.4/lib/truth.html">qui</a>, in C++ leggete <a href="https://www.geeksforgeeks.org/bool-data-type-in-c/">qui</a>.</p>
@@ -378,7 +381,7 @@ print(harry_potter.title)
 <img class="w50p" src="01-base/assets/python-select-env.png" alt="Select Python Interpreter">
 </p>
 <h1><a class="header" href="#creare-una-web-app-con-html5-e-python" id="creare-una-web-app-con-html5-e-python">Creare una web app con HTML5 e Python</a></h1>
-<p>Anche se non è un tipico metodo di insegnamento, vorrei collegarmi subito a quello che state studiando in TPSI quest'anno e creare una semplicissima applicazione con HTML e Python.</p>
+<p>Vorrei collegarmi subito a quello che state studiando in TPSI quest'anno e creare una semplicissima applicazione con HTML e Python.</p>
 <h2><a class="header" href="#caso-di-studio" id="caso-di-studio">Caso di studio</a></h2>
 <p>Immaginiamo di voler gestire una biblioteca scolastica. Da un lato ci serve del codice che gira da qualche parte nel cloud che gestisce la biblioteca, ed una pagina web per poter visualizzare la lista dei libri.</p>
 <p>Useremo Python per la prima parte (server), e HTML per la seconda parte (pagina web).</p>
@@ -561,6 +564,322 @@ for book in catalogue:
 <blockquote>
 <p>Ovviamente non è questo il modo più corretto di procedere. Per fare le cose per bene, bisogna spostare tutto su Flask, anche le pagine HTML. È un'operazione abbastanza semplice ma la vedremo dopo che vi sarete impratichiti con questa parte.</p>
 </blockquote>
+<h1><a class="header" href="#algoritmi-di-ordinamento" id="algoritmi-di-ordinamento">Algoritmi di ordinamento</a></h1>
+<p>Come abbiamo detto parlando di tipi, noi viviamo in un mondo fatto di &quot;cose&quot; raggruppate in vario modo: gli studenti della vostra classe, le pizze nel menù della pizzeria, i risultati della ricerca su un sito di e-commerce.</p>
+<p>La maggior parte di questi gruppi è <em>ordinato</em>, ovvero tutti gli elementi all'interno di questo gruppo sono messi in una precisa sequenza. Prendendo gli esempi di prima, gli studenti sono messi in ordine alfabetico, le pizze sono spesso messe in ordine di prezzo, e i risultati della ricerca di solito sono messi in ordine di &quot;rilevanza&quot;.</p>
+<p>Non stupisce quindi che l'operazione di ordinamento è di estrema importanza nel mondo dell'informatica, e l'ottimizzazione fino all'ultimo bit o microsecondo è stato oggetti di profondi studi ed è ancora un ambito di studi in continua evoluzione.</p>
+<h2><a class="header" href="#ordinamento-ed-osservazione-del-mondo-che-ci-circonda" id="ordinamento-ed-osservazione-del-mondo-che-ci-circonda">Ordinamento ed osservazione del mondo che ci circonda</a></h2>
+<p>Come molto spesso accade, la maggior parte degli algoritmi che vedremo prendono spunto dall'osservazione di come si comportano gli esseri umani quando gli viene chiesto di ordinare qualcosa o dall'osservazione di fenomeni naturali. Personalmente consiglio questo modo di procedere: non rimanere chiusi in una stanza davanti ad un monitor ma uscire fuori, osservare gli altri, la natura, il mondo che ci circonda. Gli inglesi dicono <em>get out of the building</em>. Funziona.</p>
+<h2><a class="header" href="#google-e-i-motori-di-ricerca" id="google-e-i-motori-di-ricerca">Google e i motori di ricerca</a></h2>
+<p class="centered">
+<img class="right_side" src="02-sorting/assets/search.png" alt="Google search" title="Google search">
+</p>
+<p>Come in ogni nuovo ambito, i primi che ne hanno capito davvero l'importanza sono riusciti a trarne un enorme profitto. Nel mondo degli algoritmi di ordinamento, possiamo dire che l'azienda che è riuscita in quest'ambito è <em>Google</em>.</p>
+<p>La nascita di Google e il suo core business ancora oggi sono infatti basati sul suo noto motore di ricerca <a href="https://www.google.com">www.google.com</a>. Di base, un motore di ricerca è un enorme algoritmo di ordinamento che mette in un preciso ordine dei link a pagine web secondo una serie di diversi fattori (Google li chiama <em>ranking factors</em>), nel caso di Google circa 200. Una panoramica sul motore di ricerca di Google lo trovate <a href="https://support.google.com/webmasters/answer/70897?hl=it">qui</a>, mentre la pagina ufficiale funzionamento della &quot;Ricerca Google&quot; la trovate qui <a href="https://www.google.com/search/howsearchworks/">qui</a>.</p>
+<h1><a class="header" href="#un-primo-algoritmo" id="un-primo-algoritmo">Un primo algoritmo</a></h1>
+<p>Immaginiamo che ci vengano date cinque carte da gioco e ci venga chiesto di ordinarle.</p>
+<p class="centered">
+<img class="w80p" src="02-sorting/assets/selection-cards-1.jpg" alt="selection sort cards" title="selection sort cards">
+</p>
+<p>Una possibile soluzione può essere quella di prendere la carta con il valore più basso, in questo caso il 5, e metterla all'inizio del mazzo.</p>
+<p class="centered">
+<img class="w80p" src="02-sorting/assets/selection-cards-2.jpg" alt="selection sort cards" title="selection sort cards">
+</p>
+<p>Ripetiamo adesso l'operazione anche per le carte successive: mettiamo in ordine il 6...</p>
+<p class="centered">
+<img class="w80p" src="02-sorting/assets/selection-cards-3.jpg" alt="selection sort cards" title="selection sort cards">
+</p>
+<p>Il 7 ce lo troviamo già nella posizione giusta, passiamo a sistemare l'8.</p>
+<p class="centered">
+<img class="w80p" src="02-sorting/assets/selection-cards-4.jpg" alt="selection sort cards" title="selection sort cards">
+</p>
+<p>Anche la regina si trova già al suo posto e quindi siamo arrivati ad ordinare le nostre cinque carte.</p>
+<h2><a class="header" href="#lalgoritmo" id="lalgoritmo">L'algoritmo</a></h2>
+<p>Proviamo ad implementare questo algoritmo con Python. </p>
+<p>Creiamo una lista di partenza con il valore delle carte del mio mazzo.</p>
+<pre><code class="language-py">cards = [7, 12, 8, 5, 6]
+</code></pre>
+<p>Ora creiamo una nuova lista vuota, che conterrà gli elementi ordinati.</p>
+<pre><code class="language-py">sorted_cards = []
+</code></pre>
+<p>Scorriamo tutta la lista originale e cerchiamo il valore più basso, quindi copiamolo nella nuova lista.</p>
+<pre><code class="language-py">min_val = min(cards)
+sorted_cards.append(min_val)
+</code></pre>
+<p>OK, ora dobbiamo ripetere queste istruzioni per tutti gli elementi della lista originale.</p>
+<pre><code class="language-py">for _ in range(len(cards)):
+    min_val = min(cards)
+    sorted_cards.append(min_val)
+</code></pre>
+<p>Proviamo a vedere cosa succede se stampiamo la lista ordinata.</p>
+<pre><code class="language-py">&gt;&gt;&gt; print(sorted_cards)
+[5, 5, 5, 5, 5]
+</code></pre>
+<p>Abbiamo una lista della stessa lunghezza dell'originale, ma tutti gli elementi sono il valore minimo 🤔. In effetti, ogni volta che trovo un valore minimo lo devo togliere dalla lista originale, per evitare che venga trovato sempre quello! </p>
+<p>Il nuovo algoritmo diventa quindi così:</p>
+<pre><code class="language-py">for _ in range(len(cards)):
+    min_val = min(cards)
+    sorted_cards.append(min_val)
+    cards.remove(min_val)
+</code></pre>
+<p>Se stampo il risultato ottengo:</p>
+<pre><code>&gt;&gt;&gt; print(sorted_cards)
+[5, 6, 7, 12, 18]
+</code></pre>
+<p>Bene, ha funzionato! Abbiamo creato il nostro primo algoritmo di ordinamento 😊.</p>
+<p>Questo algoritmo di ordinamento ha un nome, si chiama <em>selection sort</em> (ordinamento per selezione). È un algoritmo semplice ma efficace per liste di piccole dimensioni, come quella dell'esempio.</p>
+<h2><a class="header" href="#osservazioni" id="osservazioni">Osservazioni</a></h2>
+<p>Se è così facile ordinare una lista, perché si parla tanto di ordinamento? Il fatto è che quando la lista cresce di dimensioni, le risorse necessarie per poterla ordinare possono crescere in maniera vertiginosa, rendendo nella pratica impossibile l'ordinamento stesso oppure molto svantaggioso.</p>
+<p>Proviamo ad esempio ad usare il nostro algoritmo per liste di lunghezza diversa e calcoliamo il tempo che ci mette l'algoritmo per ordinare la lista. Il risultato è nella tabella che segue.</p>
+<p class="centered">
+<img class="w80p" src="02-sorting/assets/selection-sort.jpg" alt="Selection sort" title="Selection sort">
+</p>
+<p>Nel grafico vediamo il tempo (in secondi) che ci mette l'algoritmo per ordinare liste di lunghezza 10000, 20000, 30000, 40000, 50000 elementi. Possiamo vedere che il tempo aumenta in modo non lineare, ovvero al raddoppiare degli elementi il tempo aumenta più del doppio. Facendo un'analisi un po' più approfondita, si può vedere che l'andamento è esponenziale, e in particolare il tempo aumenta come il quadrato degli elementi della lista: al raddoppiare degli elementi, il tempo aumenta di quattro volte.</p>
+<p>Questo è un bel problema, perché se ho liste di milioni o miliardi di elementi, il tempo di ordinamento può schizzare a valori proibitivi. </p>
+<p>Per questo si cercano degli algoritmi più efficienti. Prima di andare avanti però è necessario dare una definizione della parola &quot;efficiente&quot;.</p>
+<h1><a class="header" href="#complessità" id="complessità">Complessità</a></h1>
+<p>Nella terminologia degli algoritmi di ordinamento, aumentare l'<em>efficienza</em> significa ridurre la <em>complessità</em> di un algoritmo. Meno è complesso l'algoritmo, più sarà efficiente.</p>
+<p class="centered">
+Minore complessità -> Maggiore efficienza
+</p>
+<p>Nella definizione di <em>complessità</em>, dobbiamo fare riferimento come sempre ai due componenti fondamentali di un sistema di elaborazione:</p>
+<ul>
+<li>processore (CPU)</li>
+<li>memoria primaria (RAM)</li>
+</ul>
+<p>Ridurre la complessità relativa alla CPU significa riuscire ad arrivare allo stesso risultato (l'array ordinato) con meno operazioni, e quindi in meno tempo. Questo tipo di complessità viene quindi detta <em>computazionale</em> o <em>temporale</em>.</p>
+<p>Ridurre la complessità relativa alla RAM significa occupare meno &quot;spazio&quot; in memoria RAM possibile, quindi viene detta anche complessità <em>spaziale</em>.</p>
+<h2><a class="header" href="#misura-della-complessità" id="misura-della-complessità">Misura della complessità</a></h2>
+<p>Quando calcoliamo la complessità temporale o spaziale, non ci interessa avere il numero esatto di operazioni o l'esatta quantità di memoria occupata, ma ci basta sapere &quot;più o meno&quot; quanto tempo ci metterà e quanta memoria occuperà. Questo valore approssimato viene detto <em>ordine di grandezza</em>. Esiste una simbologia specifica che serve ad indicare l'ordine di grandezza, ed è la notazione <em><a href="https://it.wikipedia.org/wiki/O-grande">O-grande</a></em>, che si scrive <em>O(n)</em>.</p>
+<p>Ad esempio, immaginiamo che, per un'attività didattica, al professore servano degli smartphone e li chieda agli studenti della classe. Quanti smartphone più o meno si può aspettare di trovare in classe? Possiamo ipotizzare che ogni studente avrà il proprio dispositivo (alcuni forse ne avranno due, alcuni nessuno), quindi l'ordine di grandezza del numero di smartphone è <em>circa</em> pari a quello degli studenti. Se gli studenti sono un numero <em>n</em> (es. 20), i dispositivi nella classe saranno anch'essi circa <em>n</em>. In questo caso si dice che il numero di smartphone nella classe è <em>O(n)</em> (si legge &quot;o di enne&quot;), dove n è il numero di studenti.</p>
+<p>Immaginiamo ora di voler organizzare un torneo di ping pong tra gli studenti di una classe. Vogliamo che tutti gli studenti giochino contro tutti gli altri studenti. Quante partite dovremo pianificare, più o meno? Se ci sono <em>n</em> studenti ed ognuno deve fare circa <em>n</em> partite, il numero di partite è (circa) <em>n * n = n<sup>2</sup></em>. In notazione O grande, si dice che il numero di partite è <em>O(n<sup>2</sup>)</em>. Anche qui il numero di partite non sarà <em>esattamente</em> n<sup>2</sup>, ma a noi serve sapere una stima approssimativa.</p>
+<h2><a class="header" href="#complessità-computazionale-o-temporale" id="complessità-computazionale-o-temporale">Complessità computazionale (o temporale)</a></h2>
+<p>Tornando al grafico del selection sort, abbiamo visto che il tempo necessario per l'ordinamento va come il quadrato del numero di elementi da ordinare. Se indichiamo con <em>n</em> il numero di elementi della lista, possiamo quindi dire che:</p>
+<p class="centered">
+ tempo di ordinamento selection sort = O(n<sup>2</sup>)
+</p>
+<p>con n = numero di elementi della lista.</p>
+<p>Il nostro obiettivo sarà trovare degli algoritmi che abbiano una relazione tra tempo e numero di elementi più vantaggiosa.</p>
+<h2><a class="header" href="#complessità-spaziale" id="complessità-spaziale">Complessità spaziale</a></h2>
+<p>Con la nostra implementazione del selection sort, in memoria RAM ci serve l'array <code>sorted_list</code> della stessa grandezza dell'array di partenza. La complessità spaziale è quindi:</p>
+<p class="centered">
+ O(n)
+</p>
+<p>Questa complessità è buona, e non possiamo ottenere ordini di grandezza migliori.</p>
+<p>Ciò non toglie che possiamo comunque &quot;limare&quot; la nostra soluzione per guadagnare un po' di memoria. Lo vedremo nella prossima pagina.</p>
+<h1><a class="header" href="#selection-sort-miglioramenti" id="selection-sort-miglioramenti">Selection sort: miglioramenti</a></h1>
+<p>Riprendiamo la nostra implementazione del selection sort finora, cercando di approfondire alcuni aspetti ed apportare delle migliorie.</p>
+<h2><a class="header" href="#ordinamento-sul-posto" id="ordinamento-sul-posto">Ordinamento sul posto</a></h2>
+<p>Eravamo arrivati a questo punto:</p>
+<pre><code class="language-py">my_list = [7, 12, 18, 5, 6]
+for _ in range(len(my_list)):
+    min_val = min(my_list)
+    sorted_list.append(min_val)
+    my_list.remove(min_val)
+</code></pre>
+<p>Per ordinare la lista, abbiamo creato una nuova lista di appoggio <code>sorted_list</code>. Se l'array è molto grande questo potrebbe essere un problema.</p>
+<p>In effetti, pensandoci, quando abbiamo ordinato il mazzo di carte non abbiamo creato una copia del mazzo, ma abbiamo spostato la posizione delle carte in modo che il mazzo di partenza fosse ordinato. Questo tipo di ordinamento che modifica direttamente l'array in input si chiama ordinamento <strong>sul posto</strong> (in inglese <em>in place</em>).</p>
+<p>Non ripeteremo qui la soluzione originale che abbiamo svolto in laboratorio, potete trovare tutto il codice <a href="https://gist.github.com/wbigger/dca17d4c1b2718897cfa6cb53631316f#file-sorting-selection-py">qui</a>.</p>
+<h2><a class="header" href="#calcolo-della-complessità-temporale" id="calcolo-della-complessità-temporale">Calcolo della complessità temporale</a></h2>
+<p>Cerchiamo di calcolare perché questo algoritmo impiega un <em>O(n<sup>2</sup>)</em> operazioni per ordinare l'array.</p>
+<p>Analizziamo il codice, ricordando che <code>len(my_list)</code> è il numero di elementi della lista e quindi esattamente il nostro <em>n</em>.</p>
+<pre><code class="language-py"># Qui c'è un for: le operazioni al suo interno 
+# vengono ripetute per n volte
+for _ in range(len(my_list)):
+    # per trovare il minimo, bisogna scorrere tutta
+    # la lista, quindi servono circa n operazioni
+    min_val = min(my_list)
+    # append è un'operazione singola
+    sorted_list.append(min_val)
+    # remove può essere considerata come un'operazione singola
+    my_list.remove(min_val)
+</code></pre>
+<p>Quindi, il numero di operazioni è:</p>
+<ul>
+<li>n operazioni per min</li>
+<li>1 operazione per append</li>
+<li>1 operazione per remove</li>
+<li>il tutto ripetuto per n volte</li>
+</ul>
+<p>Mettiamo insieme le cose e abbiamo:</p>
+<p class="centered">
+complessità temporale = (n+1+1)*n = (n+2)*n = n<sup>2</sup>+2*n
+</p>
+<p>OK, ci siamo quasi. La nostra complessità ha due addendi: </p>
+<ul>
+<li>n<sup>2</sup></li>
+<li>2*n</li>
+</ul>
+<p>Quando n diventa molto grande, il primo termine cresce molto di più del secondo, e quindi il secondo si può trascurare.</p>
+<p>Per dimostrazione, facciamo una prova ad esempio con <code>n = 1000</code>: </p>
+<ul>
+<li>n<sup>2</sup> = 1000<sup>2</sup> = 1 milione</li>
+<li>2*n = 2000</li>
+</ul>
+<p>Considerando che stiamo facendo dei calcoli approssimati, possiamo tranquillamente trascurare 2000 rispetto ad un milione!</p>
+<p>Per la complessità temporale consideriamo solo il primo termine, e quindi otteniamo:</p>
+<p class="centered">
+complessità temporale = O(n<sup>2</sup>)
+</p>
+<h2><a class="header" href="#caso-migliore-peggiore-e-medio" id="caso-migliore-peggiore-e-medio">Caso migliore, peggiore e medio</a></h2>
+<p>La complessità di un algoritmo di ordinamento potrebbe dipendere da alcuni fattori, come ad esempio se gli elementi della lista sono già ordinati, se sono <em>quasi</em> ordinati (cioé la maggior parte degli elementi sono ordinati e solo qualcuno è fuori posto), o completamente casuali.</p>
+<p>Si distinguono quindi tre casi di complessità:</p>
+<ul>
+<li>caso migliore: il minimo valore possibile di complessità</li>
+<li>caso peggiore: il massimo valore possibile di complessità</li>
+<li>caso medio: un valore che mediamente assume la complessità</li>
+</ul>
+<p>Per l'algoritmo di selection sort, il calcolo della complessità temporale non dipende da come è fatta al suo interno la lista: in ogni caso ci fa sempre lo stesso numero di operazioni. Quindi possiamo affermare quanto segue.</p>
+<table><thead><tr><th>Selection sort</th><th align="center">complessità temporale</th></tr></thead><tbody>
+<tr><td>caso migliore</td><td align="center">O(n<sup>2</sup>)</td></tr>
+<tr><td>caso peggiore</td><td align="center">O(n<sup>2</sup>)</td></tr>
+<tr><td>caso medio</td><td align="center">O(n<sup>2</sup>)</td></tr>
+</tbody></table>
+<h1><a class="header" href="#bubble-sort" id="bubble-sort">Bubble sort</a></h1>
+<p>Un altro algoritmo di ordinamento molto semplice che vedremo ora è il <em>bubble sort</em> (ordinamento a bolla).</p>
+<p class="centered">
+<img class="right_side w35p" src="02-sorting/assets/bubbles.jpg" alt="Bubbles" title="Bubbles">
+</p>
+<p>Immaginiamo che la nostra lista da ordinare sia come un oceano, in cui il primo elemento corrisponde al fondo del mare e l'ultimo elemento sia la superficie. Immaginiamo anche che gli elementi più grandi siano i più più leggeri (meno densi), e che tendano ad andare come delle bolle verso la superficie.</p>
+<p>Con questa immagine in mente, vediamo cosa dobbiamo:</p>
+<ul>
+<li>prendere il primo elemento della lista</li>
+<li>confrontarlo con tutti i successivi</li>
+<li>se il primo elemento è maggiore di uno sopra di lui, scambiare i due elementi fra loro, in modo da far &quot;risalire&quot; verso la superficie l'elemento</li>
+<li>quando ho finito con il primo elemento, ripetere l'operazione per tutti gli altri elementi della lista</li>
+</ul>
+<p>Vediamo una prima implementazione di questa procedura.</p>
+<pre><code class="language-py">my_list = [7, 12, 18, 5, 6]
+# scorro tutta la lista, partendo dal primo elemento
+for index in range(len(my_list)):
+        # per ogni elemento della lista da index fino alla fine
+        for jdex in range(index, len(my_list)):
+            # se l'elemento in index è maggiore di quello in jdex, li scambio
+            if (my_list[index] &gt; my_list[jdex]):
+                my_list[index], my_list[jdex] = my_list[jdex], my_list[index]
+
+print(my_list)
+</code></pre>
+<p><a href="https://repl.it/@ClaudioCapobian/bubble-sort-simple"><small>Versione online intereattiva</small></a></p>
+<p>Bene! Come potete vedere dalla versione online interattiva, questa versione funziona.</p>
+<h2><a class="header" href="#miglioramenti" id="miglioramenti">Miglioramenti</a></h2>
+<p>Vediamo se riusciamo a migliorare l'algoritmo.</p>
+<p>Possiamo osservare che, se quando prendiamo in esame un elemento e lo confrontiamo con tutti quelli sopra di lui, non c'è nessun elemento da scambiare, vuol dire che gli elementi sono già tutti quanti in ordine.</p>
+<p>Con questa osservazione modifichiamo l'algoritmo in questo modo.</p>
+<pre><code class="language-py">for index in range(len(my_list)):
+        # inizializziamo la variabile booleana di controllo &quot;swapped&quot; a False
+        swapped = False
+        for jdex in range(index, len(my_list)):
+            if (my_list[index] &gt; my_list[jdex]):
+                my_list[index], my_list[jdex] = my_list[jdex], my_list[index]
+                # se c'è anche un solo scambio, impostare la variabile di controllo a True
+                swapped = True
+        # solo se la variabile di controllo è rimasta False (quindi non c'è stato nessuno scambio), esco dal ciclo perché la lista è già ordinata
+        if not swapped:
+            break
+</code></pre>
+<p><a href="https://repl.it/@ClaudioCapobian/bubble-sort-2"><small>Versione online intereattiva</small></a></p>
+<h2><a class="header" href="#calcolo-della-complessità" id="calcolo-della-complessità">Calcolo della complessità</a></h2>
+<p>Proviamo a calcolare la complessità per il bubble sort.</p>
+<h3><a class="header" href="#caso-medio-e-peggiore" id="caso-medio-e-peggiore">Caso medio e peggiore</a></h3>
+<p>Nel caso medio, abbiamo i seguenti passaggi:</p>
+<ul>
+<li>il ciclo esterno (indice <code>index</code>) viene ripetuto n volte</li>
+<li>per ogni iterazione del ciclo esterno, il ciclo interno (indice <code>jdex</code>) esegue n operazioni</li>
+</ul>
+<p>Quindi nel caso medio:</p>
+<p class="centered">
+complessità temporale caso medio = O(n*n) = O(n<sup>2</sup>)
+</p>
+<p>Questo caso corrisponde anche al caso peggiore, in quanto l'algoritmo non può fare più operazioni di così.</p>
+<h3><a class="header" href="#caso-migliore" id="caso-migliore">Caso migliore</a></h3>
+<p>Nel caso in cui la lista sia già ordinata, l'algoritmo se ne accorge con la variabile booleana di guardia &quot;swapped&quot;.</p>
+<p>In questo caso il ciclo interno (indice <code>jdex</code>) esegue n operazioni, mentre il ciclo esterno uscirebbe dopo la prima iterazione.</p>
+<p>Quindi in questo caso:</p>
+<p class="centered">
+complessità temporale caso migliore = O(n*1) = O(n)
+</p>
+<p>Abbiamo trovato che il caso migliore per il bubble sort è O(n) e si ha quando la lista di partenza è già ordinata.</p>
+<h1><a class="header" href="#quick-sort" id="quick-sort">Quick sort</a></h1>
+<p>Vediamo ora un ultimo algoritmo, il <em>quick sort</em> (ordinamento veloce).
+Rispetto agli altri algoritmi finora trattati, ha un caso medio molto migliore ed è quindi utilizzabile in casi reali anche per liste di grandi dimensioni.</p>
+<p>Per capire l'idea di partenza, immaginiamo che ci venga chiesto di ordinare un mazzo di carte francesi da 104 carte.</p>
+<p class="centered">
+<img class="w100p" src="02-sorting/assets/quick-0.jpg" alt="104 cards" title="104 cards">
+</p>
+<p>Dobbiamo seguire queste regole:</p>
+<ul>
+<li>prima le carte con il dorso rosso, poi quelle con il dorso blu</li>
+<li>i semi devono essere in quest'ordine: cuori, quadri, fiori, picche</li>
+<li>per ogni seme, le carte devono essere messe in ordine crescente</li>
+</ul>
+<p>Per ordinare le carte, potremmo fare così: scorro tutte le carte e metto a sinistra quelle con il dorso rosso, e a destra quelle con il dorso blu.</p>
+<p class="centered">
+<img class="w80p" src="02-sorting/assets/quick-1.jpg" alt="Quick sort" title="Quick sort">
+</p>
+<p>Prendo ora in esame le carte con il dorso rosso, metto a sinistra tutte quelle con il seme rosso e a destra quelle con il seme nero.</p>
+<p class="centered">
+<img class="w80p" src="02-sorting/assets/quick-2.jpg" alt="Quick sort" title="Quick sort">
+</p>
+<p>Ora prendo le carte con il seme rosso e metto a sinistra i cuori e a destra i quadri.</p>
+<p class="centered">
+<img class="w80p" src="02-sorting/assets/quick-3.jpg" alt="Quick sort" title="Quick sort">
+</p>
+<p>Prendo le carte di cuori e le ordino in modo crescente.</p>
+<p class="centered">
+<img class="w80p" src="02-sorting/assets/quick-4.jpg" alt="Quick sort" title="Quick sort">
+</p>
+<p>Ripetendo il procedimento per tutti gli altri mazzetti, riesco ad ordinare tutte le carte del mazzo</p>
+<p>Questo tipo di approccio si chiama &quot;dividi et impera&quot;: si dimostra che effettivamente è un metodo efficiente per ordinare liste di grandi dimensioni.</p>
+<h2><a class="header" href="#analisi-dellalgoritmo" id="analisi-dellalgoritmo">Analisi dell'algoritmo</a></h2>
+<p>Verrà qui descritto l'algoritmo solo in modo concettuale, senza scendere nel dettaglio.</p>
+<p>Per chi vuole approfondire si consigliano le seguenti risorse:</p>
+<ul>
+<li>https://visualgo.net/en/sorting</li>
+<li>http://sorting.at/</li>
+</ul>
+<p>L'algoritmo di ordinamento quick sort prende un elemento della lista e lo imposta come <em>pivot</em> (traducibile in italiano con &quot;perno&quot;, &quot;fulcro&quot;). Sposto gli elementi della lista in modo tale che tutti gli elementi del pivot si trovino alla sua sinistra, e tutti gli elementi maggiori si trovino alla sua destra. Ottengo in questo modo due diverse sotto liste, proprio come mi accadeva con i mazzetti di carte. Ripeto quindi lo stesso procedimento per tutte le sotto liste, finché non arrivo ad ordinare tutti gli elementi.</p>
+<p>Guardate tutto il seguente video per capire meglio il funzionamento. Nel video, il pivot è il ballerino con il cappello nero e inizialmente viene preso l'elemento più a sinistra della lista (o sottolista). Il ballerino con la decorazione nel cappello è invece l'elemento con cui si confronta il pivot.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ywWBy6J5gz8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2><a class="header" href="#calcolo-complessità" id="calcolo-complessità">Calcolo complessità</a></h2>
+<p>Per calcolare la complessità, facciamo le seguenti considerazioni.</p>
+<p>Ad ogni iterazione, devo confrontare il pivot con tutti gli elementi della lista, quindi ho un numero di operazioni pari a <em>n</em>.</p>
+<p>Quante iterazioni devo fare? Nel caso medio posso considerare che il pivot finisca esattamente al centro (come capitava con il mazzo di carte) e che quindi ogni volta la lista si divida in due parti uguali. Devo quindi dividere per due finché non arrivo ad avere liste di un solo elemento.</p>
+<p>Devo quindi trovare il numero di divisioni per il quale</p>
+<p class="centered">
+ n/2/2/2/... = 1
+ </p>
+<p>Se chiamo <em>k</em> il numero di volte che devo fare la divisione, l'espressione precedente si può anche scrivere come:</p>
+<p class="centered">
+ n/2/2/2/... = n/2<sup>k</sup> = 1
+ </p>
+<p>Posso portare al numeratore k.</p>
+<p class="centered">
+ n = 2<sup>k</sup>
+ </p>
+<p>Il numero k mi compare come esponente di 2. Come faccio a calcolare direttamente k? Per fortuna in matematica esiste la funzione inversa dell'esponenziale: si chiama <em>logaritmo</em>, lo vedrete l'anno prossimo in matematica. In ogni caso vi basti sapere che:</p>
+<p class="centered">
+ k = log<sub>2</sub>(n)
+</p>
+<p>Quindi, mettendo insieme i pezzi, devo fare log<sub>2</sub>(n) iterazioni ed ogni iterazione costa n operazioni. Il totale è quindi:</p>
+<p class="centered">
+ complessità temporale quick sort caso medio = O(n*log<sub>2</sub>(n))
+</p>
+<p>Bene, ce l'abbiamo fatta :)</p>
+<h3><a class="header" href="#caso-peggiore" id="caso-peggiore">Caso peggiore</a></h3>
+<p>Quanto detto vale nel caso medio (che vale anche come caso migliore), nel quale la lista si divide sempre esattamente a metà. Questo non è sempre vero: se sono particolarmente sfortunato, potrebbe succedermi che il pivot invece di capitare al centro va a finire sempre ad un'estremità della lista, tutto a destra o tutto a sinistra.</p>
+<p>Se mi capitasse questo caso, il numero di iterazioni che devo fare sarebbe circa il numero di elementi della lista, in quanto di fatto non sto dividendo realmente la lista, ma sto spostando il pivot tutto da un lato, come faceva il bubble sort. La complessità è pari a n iterazioni ognuna con n operazioni, ed ottengo un andamento come n<sup>2</sup>.</p>
+<p class="centered">
+complessità temporale quick sort caso peggiore = O(n<sup>2</sup>)
+</p>
+<p>Non posso fare in modo che questo caso peggiore non esista, ma la buona notizia è che posso fare in modo che sia molto improbabile scegliendo in modo opportuno l'elemento pivot. Un buon compromesso è quello di scegliere come pivot sempre l'elemento centrale della lista.</p>
+<h3><a class="header" href="#approfondimenti" id="approfondimenti">Approfondimenti</a></h3>
+<p>Per una spiegazione più dettagliata ed esauriente guardatevi questo video.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-qOVVRIZzao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2><a class="header" href="#esecuzione-parallela" id="esecuzione-parallela">Esecuzione parallela</a></h2>
+<p>Come ultima nota, possiamo notare che una volta partizionata la lista in sotto-liste, l'ordinamento delle singole sotto-liste è indipendente.</p>
+<p>Torniamo all'esempio delle carte: una volta divise le carte con il dorso rosso da quelle con il dorso blu, noi possiamo continuare a ordinare il mazzo rosso e possiamo chiedere ad un amico di ordinare quelle con il dorso blu. Posso poi chiedere ad un altro amico di ordinare le carte con i semi nero mentre io ordino quelle con i semi rossi, e così via. Se gli amici sono collaborativi, ci metteremo molto meno.</p>
+<h1><a class="header" href="#gestione-della-memoria" id="gestione-della-memoria">Gestione della memoria</a></h1>
 
                     </main>
 

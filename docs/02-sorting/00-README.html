@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Installazione di Python - Course Template</title>
+        <title>Ordinamento - Course Template</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">2.2.</strong> Classi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">2.3.</strong> Python</a></li><li class="expanded "><a href="../01-base/02-1-python-install.html" class="active"><strong aria-hidden="true">2.4.</strong> Installazione di Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">2.5.</strong> Web app</a></li></ol></li><li class="expanded "><a href="../02-sorting/00-README.html"><strong aria-hidden="true">3.</strong> Ordinamento</a></li><li><ol class="section"><li class="expanded "><a href="../02-sorting/01-selection-sort.html"><strong aria-hidden="true">3.1.</strong> Un primo algoritmo</a></li><li class="expanded "><a href="../02-sorting/02-complexity.html"><strong aria-hidden="true">3.2.</strong> Complessità</a></li><li class="expanded "><a href="../02-sorting/03-selection-sort.html"><strong aria-hidden="true">3.3.</strong> Selection sort: miglioramenti</a></li><li class="expanded "><a href="../02-sorting/04-bubble-sort.html"><strong aria-hidden="true">3.4.</strong> Bubble sort</a></li><li class="expanded "><a href="../02-sorting/05-quick-sort.html"><strong aria-hidden="true">3.5.</strong> Quick sort</a></li><li class="expanded "><a href="../02-sorting/06-memory-management.html"><strong aria-hidden="true">3.6.</strong> Gestione della memoria</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Benvenuti</a></li><li class="expanded "><a href="../01-base/index.html"><strong aria-hidden="true">2.</strong> Concetti base</a></li><li><ol class="section"><li class="expanded "><a href="../01-base/01-types.html"><strong aria-hidden="true">2.1.</strong> Tipi</a></li><li class="expanded "><a href="../01-base/01-types-classes.html"><strong aria-hidden="true">2.2.</strong> Classi</a></li><li class="expanded "><a href="../01-base/02-python.html"><strong aria-hidden="true">2.3.</strong> Python</a></li><li class="expanded "><a href="../01-base/02-1-python-install.html"><strong aria-hidden="true">2.4.</strong> Installazione di Python</a></li><li class="expanded "><a href="../01-base/03-webapp.html"><strong aria-hidden="true">2.5.</strong> Web app</a></li></ol></li><li class="expanded "><a href="../02-sorting/00-README.html" class="active"><strong aria-hidden="true">3.</strong> Ordinamento</a></li><li><ol class="section"><li class="expanded "><a href="../02-sorting/01-selection-sort.html"><strong aria-hidden="true">3.1.</strong> Un primo algoritmo</a></li><li class="expanded "><a href="../02-sorting/02-complexity.html"><strong aria-hidden="true">3.2.</strong> Complessità</a></li><li class="expanded "><a href="../02-sorting/03-selection-sort.html"><strong aria-hidden="true">3.3.</strong> Selection sort: miglioramenti</a></li><li class="expanded "><a href="../02-sorting/04-bubble-sort.html"><strong aria-hidden="true">3.4.</strong> Bubble sort</a></li><li class="expanded "><a href="../02-sorting/05-quick-sort.html"><strong aria-hidden="true">3.5.</strong> Quick sort</a></li><li class="expanded "><a href="../02-sorting/06-memory-management.html"><strong aria-hidden="true">3.6.</strong> Gestione della memoria</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,38 +154,31 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#installare-python" id="installare-python">Installare Python</a></h1>
-<p>Per installare Python su Visual Studio Code, <a href="https://code.visualstudio.com/docs/python/python-tutorial">questa</a> è la guida ufficiale. Riepiloghiamo in breve qui i passaggi.</p>
-<h2><a class="header" href="#installare-python-sul-proprio-computer" id="installare-python-sul-proprio-computer">Installare Python sul proprio computer</a></h2>
-<p>Andare sul sito <a href="https://www.python.org/downloads/">Python downloads</a> e scaricare l'ultima versione di Python premendo il bottoncione giallo grande con scritto &quot;Download Python&quot;.</p>
-<p>Quando lo avviate, vedrete una schermata di questo genere (la versione di Python potrebbe cambiare):</p>
-<p class="img-container centered">
-<img class="w80p" src="assets/python-install.png" alt="Install Python">
+                        <h1><a class="header" href="#algoritmi-di-ordinamento" id="algoritmi-di-ordinamento">Algoritmi di ordinamento</a></h1>
+<p>Come abbiamo detto parlando di tipi, noi viviamo in un mondo fatto di &quot;cose&quot; raggruppate in vario modo: gli studenti della vostra classe, le pizze nel menù della pizzeria, i risultati della ricerca su un sito di e-commerce.</p>
+<p>La maggior parte di questi gruppi è <em>ordinato</em>, ovvero tutti gli elementi all'interno di questo gruppo sono messi in una precisa sequenza. Prendendo gli esempi di prima, gli studenti sono messi in ordine alfabetico, le pizze sono spesso messe in ordine di prezzo, e i risultati della ricerca di solito sono messi in ordine di &quot;rilevanza&quot;.</p>
+<p>Non stupisce quindi che l'operazione di ordinamento è di estrema importanza nel mondo dell'informatica, e l'ottimizzazione fino all'ultimo bit o microsecondo è stato oggetti di profondi studi ed è ancora un ambito di studi in continua evoluzione.</p>
+<h2><a class="header" href="#ordinamento-ed-osservazione-del-mondo-che-ci-circonda" id="ordinamento-ed-osservazione-del-mondo-che-ci-circonda">Ordinamento ed osservazione del mondo che ci circonda</a></h2>
+<p>Come molto spesso accade, la maggior parte degli algoritmi che vedremo prendono spunto dall'osservazione di come si comportano gli esseri umani quando gli viene chiesto di ordinare qualcosa o dall'osservazione di fenomeni naturali. Personalmente consiglio questo modo di procedere: non rimanere chiusi in una stanza davanti ad un monitor ma uscire fuori, osservare gli altri, la natura, il mondo che ci circonda. Gli inglesi dicono <em>get out of the building</em>. Funziona.</p>
+<h2><a class="header" href="#google-e-i-motori-di-ricerca" id="google-e-i-motori-di-ricerca">Google e i motori di ricerca</a></h2>
+<p class="centered">
+<img class="right_side" src="assets/search.png" alt="Google search" title="Google search">
 </p>
-<p>Attenzione: selezionate l'ultima spunta in basso &quot;Add Python to PATH&quot; per poter usare i comandi Python anche da terminale.</p>
-<p>Seguite le istruzioni fino in fondo, e se necessario riavviate Visual Studio Code.</p>
-<h2><a class="header" href="#visual-studio-code" id="visual-studio-code">Visual Studio Code</a></h2>
-<p>Aprite Visual Studio Code ed installate l'estensione <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python di Microsoft</a>. </p>
-<p class="img-container centered">
-<img class="w80p" src="assets/python-extension.png" alt="Install Python extension">
-</p>
-<p>Una volta installata, quando aprirete un file con estensione <code>.py</code> vi comparirà nella barra blu in basso la possibilità di selezionare l'interprete Python. Selezionate l'ultima versione che avete appena installato.</p>
-<p class="img-container centered">
-<img class="w50p" src="assets/python-select-env.png" alt="Select Python Interpreter">
-</p>
+<p>Come in ogni nuovo ambito, i primi che ne hanno capito davvero l'importanza sono riusciti a trarne un enorme profitto. Nel mondo degli algoritmi di ordinamento, possiamo dire che l'azienda che è riuscita in quest'ambito è <em>Google</em>.</p>
+<p>La nascita di Google e il suo core business ancora oggi sono infatti basati sul suo noto motore di ricerca <a href="https://www.google.com">www.google.com</a>. Di base, un motore di ricerca è un enorme algoritmo di ordinamento che mette in un preciso ordine dei link a pagine web secondo una serie di diversi fattori (Google li chiama <em>ranking factors</em>), nel caso di Google circa 200. Una panoramica sul motore di ricerca di Google lo trovate <a href="https://support.google.com/webmasters/answer/70897?hl=it">qui</a>, mentre la pagina ufficiale funzionamento della &quot;Ricerca Google&quot; la trovate qui <a href="https://www.google.com/search/howsearchworks/">qui</a>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../01-base/02-python.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../01-base/03-webapp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../01-base/03-webapp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../02-sorting/01-selection-sort.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -197,13 +190,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../01-base/02-python.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../01-base/03-webapp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../01-base/03-webapp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../02-sorting/01-selection-sort.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
