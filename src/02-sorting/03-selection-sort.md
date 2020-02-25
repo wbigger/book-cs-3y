@@ -75,8 +75,9 @@ Si distinguono quindi tre casi di complessità:
 - caso peggiore: il massimo valore possibile di complessità
 - caso medio: un valore che mediamente assume la complessità
 
-Per l'algoritmo di selection sort, il calcolo della complessità temporale non dipende da come è fatta al suo interno la lista: in ogni caso ci fa sempre lo stesso numero di operazioni. Quindi possiamo affermare quanto segue.
+Per l'algoritmo di selection sort, il calcolo della complessità temporale non dipende da come è fatta al suo interno la lista: in ogni caso ci fa sempre lo stesso numero di operazioni.
 
+## Recap
 
 | Selection sort | complessità temporale |
 |-------------|:-----:|

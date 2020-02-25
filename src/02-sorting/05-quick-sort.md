@@ -110,6 +110,15 @@ Per una spiegazione più dettagliata ed esauriente guardatevi questo video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-qOVVRIZzao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Recap
+| Quick sort | complessità temporale |
+|-------------|:-----:|
+| caso migliore | O(n*log<sub>2</sub>(n)) |
+| caso peggiore | O(n<sup>2</sup>) |
+| caso medio | O(n*log<sub>2</sub>(n)) |
+
+
+
 ## Esecuzione parallela
 Come ultima nota, possiamo notare che una volta partizionata la lista in sotto-liste, l'ordinamento delle singole sotto-liste è indipendente.
 

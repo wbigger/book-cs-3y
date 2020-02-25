@@ -80,3 +80,10 @@ complessità temporale caso migliore = O(n*1) = O(n)
 
 Abbiamo trovato che il caso migliore per il bubble sort è O(n) e si ha quando la lista di partenza è già ordinata.
 
+## Recap
+| Bubble sort | complessità temporale |
+|-------------|:-----:|
+| caso migliore | O(n) |
+| caso peggiore | O(n<sup>2</sup>) |
+| caso medio | O(n<sup>2</sup>) |
+
