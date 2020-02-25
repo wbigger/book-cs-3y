@@ -729,7 +729,8 @@ complessità temporale = O(n<sup>2</sup>)
 <li>caso peggiore: il massimo valore possibile di complessità</li>
 <li>caso medio: un valore che mediamente assume la complessità</li>
 </ul>
-<p>Per l'algoritmo di selection sort, il calcolo della complessità temporale non dipende da come è fatta al suo interno la lista: in ogni caso ci fa sempre lo stesso numero di operazioni. Quindi possiamo affermare quanto segue.</p>
+<p>Per l'algoritmo di selection sort, il calcolo della complessità temporale non dipende da come è fatta al suo interno la lista: in ogni caso ci fa sempre lo stesso numero di operazioni.</p>
+<h2><a class="header" href="#recap" id="recap">Recap</a></h2>
 <table><thead><tr><th>Selection sort</th><th align="center">complessità temporale</th></tr></thead><tbody>
 <tr><td>caso migliore</td><td align="center">O(n<sup>2</sup>)</td></tr>
 <tr><td>caso peggiore</td><td align="center">O(n<sup>2</sup>)</td></tr>
@@ -800,6 +801,12 @@ complessità temporale caso medio = O(n*n) = O(n<sup>2</sup>)
 complessità temporale caso migliore = O(n*1) = O(n)
 </p>
 <p>Abbiamo trovato che il caso migliore per il bubble sort è O(n) e si ha quando la lista di partenza è già ordinata.</p>
+<h2><a class="header" href="#recap-1" id="recap-1">Recap</a></h2>
+<table><thead><tr><th>Bubble sort</th><th align="center">complessità temporale</th></tr></thead><tbody>
+<tr><td>caso migliore</td><td align="center">O(n)</td></tr>
+<tr><td>caso peggiore</td><td align="center">O(n<sup>2</sup>)</td></tr>
+<tr><td>caso medio</td><td align="center">O(n<sup>2</sup>)</td></tr>
+</tbody></table>
 <h1><a class="header" href="#quick-sort" id="quick-sort">Quick sort</a></h1>
 <p>Vediamo ora un ultimo algoritmo, il <em>quick sort</em> (ordinamento veloce).
 Rispetto agli altri algoritmi finora trattati, ha un caso medio molto migliore ed è quindi utilizzabile in casi reali anche per liste di grandi dimensioni.</p>
@@ -876,6 +883,12 @@ complessità temporale quick sort caso peggiore = O(n<sup>2</sup>)
 <h3><a class="header" href="#approfondimenti" id="approfondimenti">Approfondimenti</a></h3>
 <p>Per una spiegazione più dettagliata ed esauriente guardatevi questo video.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-qOVVRIZzao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2><a class="header" href="#recap-2" id="recap-2">Recap</a></h2>
+<table><thead><tr><th>Quick sort</th><th align="center">complessità temporale</th></tr></thead><tbody>
+<tr><td>caso migliore</td><td align="center">O(n*log<sub>2</sub>(n))</td></tr>
+<tr><td>caso peggiore</td><td align="center">O(n<sup>2</sup>)</td></tr>
+<tr><td>caso medio</td><td align="center">O(n*log<sub>2</sub>(n))</td></tr>
+</tbody></table>
 <h2><a class="header" href="#esecuzione-parallela" id="esecuzione-parallela">Esecuzione parallela</a></h2>
 <p>Come ultima nota, possiamo notare che una volta partizionata la lista in sotto-liste, l'ordinamento delle singole sotto-liste è indipendente.</p>
 <p>Torniamo all'esempio delle carte: una volta divise le carte con il dorso rosso da quelle con il dorso blu, noi possiamo continuare a ordinare il mazzo rosso e possiamo chiedere ad un amico di ordinare quelle con il dorso blu. Posso poi chiedere ad un altro amico di ordinare le carte con i semi nero mentre io ordino quelle con i semi rossi, e così via. Se gli amici sono collaborativi, ci metteremo molto meno.</p>
