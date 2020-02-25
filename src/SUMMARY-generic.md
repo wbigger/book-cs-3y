@@ -10,3 +10,4 @@
 - [Ordinamento](./02-sorting/00-README.md)
     - [Un primo algoritmo](./02-sorting/01-selection-sort.md)
     - [Complessità](./02-sorting/02-complexity.md)
+    - [Selection sort rivisitato](./02-sorting/03-selection-sort.md)

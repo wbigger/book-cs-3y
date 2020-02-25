@@ -44,5 +44,23 @@ Quindi, il numero di operazioni è:
 Mettiamo insieme le cose e abbiamo:
 
 <p class="centered">
-complessità = (n+1+1)*n = (n+2)*n = n<sup>2</sup>+2*n
+complessità temporale = (n+1+1)*n = (n+2)*n = n<sup>2</sup>+2*n
+</p>
+
+OK, ci siamo quasi. La nostra complessità ha due addendi: 
+- n<sup>2</sup>
+- 2*n
+
+Quando n diventa molto grande, il primo termine cresce molto di più del secondo, e quindi il secondo si può trascurare.
+
+Per dimostrazione, facciamo una prova ad esempio con `n = 1000`: 
+- n<sup>2</sup> = 1000<sup>2</sup> = 1 milione
+- 2*n = 2000
+
+Considerando che stiamo facendo dei calcoli approssimati, possiamo tranquillamente trascurare 2000 rispetto ad un milione!
+
+Per la complessità temporale consideriamo solo il primo termine, e quindi otteniamo:
+
+<p class="centered">
+complessità temporale = O(n<sup>2</sup>)
 </p>
