@@ -738,16 +738,16 @@ complessità temporale = O(n<sup>2</sup>)
 </tbody></table>
 <h1><a class="header" href="#bubble-sort" id="bubble-sort">Bubble sort</a></h1>
 <p>Un altro algoritmo di ordinamento molto semplice che vedremo ora è il <em>bubble sort</em> (ordinamento a bolla).</p>
+<p>L'algoritmo prende ispirazione dal fenomeno di sedimentazione: in un fluido composto da elementi di diversità diversa, con il tempo gli elementi più densi tenderanno ad andare verso il fondo e quelli meno densi verso la superficie.</p>
+<p>Immaginiamo quindi che la nostra lista da ordinare sia una bottiglia d'olio, in cui il primo elemento corrisponde al fondo della bottiglia e l'ultimo elemento al tappo. Immaginiamo anche che gli elementi più grandi siano i più più leggeri (meno densi) e che per questo tendano ad andare come delle bolle verso la superficie.</p>
 <p class="centered">
-<img class="right_side w35p" src="02-sorting/assets/bubbles.jpg" alt="Bubbles" title="Bubbles">
+<img class="w80p" src="02-sorting/assets/oil.jpg" alt="Sedimento" title="Sedimento">
 </p>
-<p>Immaginiamo che la nostra lista da ordinare sia come un oceano, in cui il primo elemento corrisponde al fondo del mare e l'ultimo elemento sia la superficie. Immaginiamo anche che gli elementi più grandi siano i più più leggeri (meno densi), e che tendano ad andare come delle bolle verso la superficie.</p>
-<p>Con questa immagine in mente, vediamo cosa dobbiamo:</p>
+<p>Cerchiamo di emulare questo comportamento con un algoritmo:</p>
 <ul>
-<li>prendere il primo elemento della lista</li>
-<li>confrontarlo con tutti i successivi</li>
-<li>se il primo elemento è maggiore di uno sopra di lui, scambiare i due elementi fra loro, in modo da far &quot;risalire&quot; verso la superficie l'elemento</li>
-<li>quando ho finito con il primo elemento, ripetere l'operazione per tutti gli altri elementi della lista</li>
+<li>parto dal primo elemento (il fondo), e procedo passo passo verso la fine (il tappo)</li>
+<li>ad ogni passo confronto due elementi: se quello in basso è più grande di quello in alto (più leggero), li scambio, in modo da farlo &quot;risalire&quot; verso la superficie</li>
+<li>quando sono arrivato alla fine, ritorno dall'inizio e ricomincio finché non è tutto ordinato</li>
 </ul>
 <p>Vediamo una prima implementazione di questa procedura.</p>
 <pre><code class="language-py">my_list = [7, 12, 18, 5, 6]
