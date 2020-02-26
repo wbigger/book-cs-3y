@@ -31,7 +31,7 @@ for index in range(len(my_list)):
 
 print(my_list)
 ```
-[<small>Versione online intereattiva</small>](https://repl.it/@ClaudioCapobian/bubble-sort-simple)
+[<small>Versione online interattiva</small>](https://repl.it/@ClaudioCapobian/bubble-sort-simple)
 
 Bene! Come potete vedere dalla versione online interattiva, questa versione funziona.
 
@@ -54,7 +54,7 @@ for index in range(len(my_list)):
         if not swapped:
             break
 ```
-[<small>Versione online intereattiva</small>](https://repl.it/@ClaudioCapobian/bubble-sort-2)
+[<small>Versione online interattiva</small>](https://repl.it/@ClaudioCapobian/bubble-sort-2)
 
 ## Calcolo della complessità
 Proviamo a calcolare la complessità per il bubble sort.
