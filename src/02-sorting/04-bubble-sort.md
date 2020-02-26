@@ -2,17 +2,20 @@
 
 Un altro algoritmo di ordinamento molto semplice che vedremo ora è il _bubble sort_ (ordinamento a bolla).
 
+
+
+L'algoritmo prende ispirazione dal fenomeno di sedimentazione: in un fluido composto da elementi di diversità diversa, con il tempo gli elementi più densi tenderanno ad andare verso il fondo e quelli meno densi verso la superficie.
+
+Immaginiamo quindi che la nostra lista da ordinare sia una bottiglia d'olio, in cui il primo elemento corrisponde al fondo della bottiglia e l'ultimo elemento al tappo. Immaginiamo anche che gli elementi più grandi siano i più più leggeri (meno densi) e che per questo tendano ad andare come delle bolle verso la superficie.
+
 <p class="centered">
-<img class="right_side w35p" src="assets/bubbles.jpg" alt="Bubbles" title="Bubbles">
+<img class="w80p" src="assets/oil.jpg" alt="Sedimento" title="Sedimento">
 </p>
 
-Immaginiamo che la nostra lista da ordinare sia come un oceano, in cui il primo elemento corrisponde al fondo del mare e l'ultimo elemento sia la superficie. Immaginiamo anche che gli elementi più grandi siano i più più leggeri (meno densi), e che tendano ad andare come delle bolle verso la superficie.
-
-Con questa immagine in mente, vediamo cosa dobbiamo:
-- prendere il primo elemento della lista
-- confrontarlo con tutti i successivi
-- se il primo elemento è maggiore di uno sopra di lui, scambiare i due elementi fra loro, in modo da far "risalire" verso la superficie l'elemento
-- quando ho finito con il primo elemento, ripetere l'operazione per tutti gli altri elementi della lista
+Cerchiamo di emulare questo comportamento con un algoritmo:
+- parto dal primo elemento (il fondo), e procedo passo passo verso la fine (il tappo)
+- ad ogni passo confronto due elementi: se quello in basso è più grande di quello in alto (più leggero), li scambio, in modo da farlo "risalire" verso la superficie
+- quando sono arrivato alla fine, ritorno dall'inizio e ricomincio finché non è tutto ordinato
 
 Vediamo una prima implementazione di questa procedura.
 
