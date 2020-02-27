@@ -13,8 +13,8 @@ Immaginiamo quindi che la nostra lista da ordinare sia una bottiglia d'olio, in 
 </p>
 
 Cerchiamo di emulare questo comportamento con un algoritmo:
-- parto dal primo elemento (il fondo), e procedo passo passo verso la fine (il tappo)
-- ad ogni passo confronto due elementi: se quello in basso è più grande di quello in alto (più leggero), li scambio, in modo da farlo "risalire" verso la superficie
+- parto dal primo elemento (dal fondo), e procedo passo passo verso la fine (il tappo)
+- ad ogni passo confronto due elementi: se quello in basso è più grande di quello in alto, li scambio, in modo da farlo "risalire" verso la superficie
 - quando sono arrivato alla fine, ritorno dall'inizio e ricomincio finché non è tutto ordinato
 
 Vediamo una prima implementazione di questa procedura.
