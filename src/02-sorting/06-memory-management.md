@@ -22,7 +22,7 @@ La memoria di un processo può essere considerata come un lungo nastro che in se
 Per gestire le cose più agevolmente, il compilatore divide queste due aree di memoria in due zone distinte, chiamate _stack_ (catasta, a sinistra nella foto) e _heap_ (mucchio, a destra nella foto).
 
 <p class="centered">
-<img class="w80p" src="assets/stack-heap.png" alt="Stack and heap" title="Stack and heap">
+<img class="w80p" src="assets/stack-heap.jpg" alt="Stack and heap" title="Stack and heap">
 </p>
 
 L'idea di base è che la _stack_ è una memoria piccola, ordinata e veloce, che posso manovrare facilmente. Su Linux questa memoria è circa 8MB. Possiamo considerarla come lo schedario nel caso dei libri.
