@@ -4,7 +4,7 @@ Un altro algoritmo di ordinamento molto semplice che vedremo ora è il _bubble s
 
 
 
-L'algoritmo prende ispirazione dal fenomeno di sedimentazione: in un fluido composto da elementi di diversità diversa, con il tempo gli elementi più densi tenderanno ad andare verso il fondo e quelli meno densi verso la superficie.
+L'algoritmo prende ispirazione dal fenomeno di sedimentazione: in un fluido composto da elementi di densità diversa, con il tempo gli elementi più densi tenderanno ad andare verso il fondo e quelli meno densi verso la superficie.
 
 Immaginiamo quindi che la nostra lista da ordinare sia una bottiglia d'olio, in cui il primo elemento corrisponde al fondo della bottiglia e l'ultimo elemento al tappo. Immaginiamo anche che gli elementi più grandi siano i più più leggeri (meno densi) e che per questo tendano ad andare come delle bolle verso la superficie.
 
