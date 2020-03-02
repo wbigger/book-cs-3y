@@ -33,7 +33,7 @@ print(my_list)
 ```
 [<small>Versione online interattiva</small>](https://repl.it/@ClaudioCapobian/bubble-sort-simple)
 
-Bene! Come potete vedere dalla versione online interattiva, questa versione funziona.
+Bene! Come potete vedere dalla versione online interattiva, questo algoritmo funziona.
 
 ## Miglioramenti
 Vediamo se riusciamo a migliorare l'algoritmo.
