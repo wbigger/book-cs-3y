@@ -122,4 +122,4 @@ Per una spiegazione più dettagliata ed esauriente guardatevi questo video.
 ## Esecuzione parallela
 Come ultima nota, possiamo notare che una volta partizionata la lista in sotto-liste, l'ordinamento delle singole sotto-liste è indipendente.
 
-Torniamo all'esempio delle carte: una volta divise le carte con il dorso rosso da quelle con il dorso blu, noi possiamo continuare a ordinare il mazzo rosso e possiamo chiedere ad un amico di ordinare quelle con il dorso blu. Posso poi chiedere ad un altro amico di ordinare le carte con i semi nero mentre io ordino quelle con i semi rossi, e così via. Se gli amici sono collaborativi, ci metteremo molto meno.
+Torniamo all'esempio delle carte: una volta divise le carte con il dorso rosso da quelle con il dorso blu, noi possiamo ordinare il primo mazzo e chiedere ad un amico di ordinare il secondo. Posso poi chiedere ad un altro amico di ordinare le carte con i semi neri mentre io ordino quelle con i semi rossi, e così via. Se gli amici sono collaborativi, ci metteremo molto meno.

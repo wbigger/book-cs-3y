@@ -4,11 +4,11 @@ Negli algoritmi di ordinamento che abbiamo visto, potreste aver notato che gli e
 
 Ma nella pratica, all'interno della memoria, cosa succede quando scambio degli elementi?
 
-Se gli elementi sono piccoli, ad esempio interi o float, posso scambiare direttamente i valori in memoria senza particolari problemi. Questo caso corrisponde a quello delle carte da gioco, per il quale è facile scambiare la posizione delle carte.
+La risposta è ovviamente... dipende. Se gli elementi sono piccoli, ad esempio interi o float, si possono scambiare direttamente i valori in memoria senza particolari problemi. Questo caso corrisponde a quello delle carte da gioco, per il quale è facile scambiare la posizione delle carte.
 
-Immaginiamo ora di avere degli elementi più grandi da ordinare, ad esempio dei libri. Spostare tutti i libri da una parte all'altra dello scaffale può essere faticoso. Inoltre potrei avere i libri ordinati in un solo modo: o per autore, o per genere, o per titolo, etc. Se volessi avere più ordinamenti dovrei fotocopiare tutti i libri e metterli in altri scaffali, molto scomodo 😑. Per ovviare a questo problema, le biblioteche usano (o meglio, usavano prima del computer) degli schedari che contengono delle piccole schede facilmente gestibili. Ogni scheda deve avere un _riferimento_ univoco al libro, in modo che io possa facilmente passare dalla scheda al libro; questo riferimento è come se fosse un filo invisibile che collega la scheda al libro.
+Ma non sempre le cose sono così semplici. Immaginiamo, nel mondo reale, di avere degli elementi più grandi da ordinare, ad esempio dei libri. Spostare tutti i libri da una parte all'altra dello scaffale può essere faticoso. Inoltre, in un certo momento, potrei avere i libri ordinati in un solo modo: o per autore, o per genere, o per titolo, etc. Se volessi avere più ordinamenti diversi dovrei fotocopiare tutti i libri e metterli in altri scaffali, molto scomodo 😑. Per ovviare a questo problema, le biblioteche prima dell'arrivo dei computer usavano degli schedari che contenevano delle piccole schede facilmente gestibili. Ogni scheda aveva un _riferimento_ univoco ad un libro, in modo che si possa facilmente passare dalla scheda al libro; questo riferimento è come se fosse un filo invisibile che collega la scheda al libro.
 
-> Possiamo notare che l'operazione inversa non ci serve: non è necessario passare dal libro alla scheda.
+> Possiamo notare che l'operazione inversa non è possibile: non possiamo passare dal libro alla scheda. Per fortuna questo tipo di passaggio non è necessario.
 
 Per la memoria succede qualcosa di molto simile.
 
@@ -27,7 +27,7 @@ Per gestire le cose più agevolmente, il compilatore divide queste due aree di m
 
 L'idea di base è che la _stack_ è una memoria piccola, ordinata e veloce, che posso manovrare facilmente. Su Linux questa memoria è circa 8MB. Possiamo considerarla come lo schedario nel caso dei libri.
 
-La memoria _heap_ invece contiene il grosso delle informazioni: testo, foto, audio documenti, etc. La memoria heap può essere grande centinaia di megabytes, o anche gigabytes. Una volta caricati gli oggetti in memoria heap, questi rimangono fermi nello stesso punto finché qualcuno non li distrugge per liberare memoria. La memoria heap, come dice il nome, non è ordinata: le variabili vengono caricate in memoria dove c'è posto, senza un ordine preciso.
+La memoria _heap_ invece contiene il grosso delle informazioni: testo, foto, audio documenti, etc. La memoria heap può essere grande centinaia di megabytes, o anche gigabytes. Una volta caricati gli oggetti in memoria heap, questi rimangono fermi nello stesso punto finché qualcuno non li distrugge per liberare memoria. La memoria heap, come dice il nome, non è ordinata: le variabili vengono caricate in memoria dove c'è posto, senza un ordine preciso. Nell'esempio della libreria, corrisponde agli scaffali con dentro i libri.
 
 Come nel caso dei libri e dello schedario, esiste un filo che parte dalle variabili nella memoria stack e arriva alle variabili nella memoria heap. Questo "filo" sarà argomento delle prossime lezioni.
 
