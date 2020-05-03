@@ -7,4 +7,4 @@ title = "Course Template"
 
 [output.html]
 additional-css = ["custom.css"]
-git-repository-url = "https://github.com/wbigger/"
+git-repository-url = "https://github.com/wbigger/book-cs-3y"
